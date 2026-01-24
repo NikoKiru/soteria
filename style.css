@@ -1114,8 +1114,10 @@ kbd {
 
 .screenshot-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .screenshot-card {
@@ -1126,6 +1128,8 @@ kbd {
     opacity: 0;
     transform: translateY(20px);
     transition: all var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
 }
 
 .screenshot-card.animate-in {
@@ -1134,8 +1138,8 @@ kbd {
 }
 
 .screenshot-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .screenshot-placeholder {
@@ -1180,17 +1184,23 @@ kbd {
     height: auto;
     object-fit: contain;
     display: none;
+    background: white;
     border-bottom: 1px solid var(--border);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .screenshot-card h3 {
-    padding: 20px 20px 8px;
+    padding: 24px 24px 10px;
     color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .screenshot-card p {
-    padding: 0 20px 20px;
-    font-size: 0.9rem;
+    padding: 0 24px 24px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* Animation delays for screenshots */
