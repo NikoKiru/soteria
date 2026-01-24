@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soteria - A secure local-first password manager that keeps your credentials safe on your own machine.">
+    <meta name="keywords" content="password manager, security, encryption, local, privacy">
+    <title>Soteria - Secure Local Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#tech">Technology</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Your Passwords.<br><span class="highlight">Your Machine.</span></h1>
+                <p class="hero-subtitle">Soteria is a secure, local-first password manager that keeps your credentials encrypted on your own device. No cloud. No subscriptions. Just security.</p>
+                <div class="hero-badges">
+                    <span class="badge">🔐 AES-256 Encryption</span>
+                    <span class="badge">🖥️ GUI & CLI</span>
+                    <span class="badge">🌐 Browser Extension</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="mockup-title">Soteria Password Manager</span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-search">
+                            <span class="search-icon">🔍</span>
+                            <span>Search passwords...</span>
+                        </div>
+                        <div class="mockup-entry">
+                            <span class="entry-icon">🌐</span>
+                            <div class="entry-info">
+                                <span class="entry-name">GitHub</span>
+                                <span class="entry-user">user@example.com</span>
+                            </div>
+                            <span class="entry-copy">📋</span>
+                        </div>
+                        <div class="mockup-entry">
+                            <span class="entry-icon">📧</span>
+                            <div class="entry-info">
+                                <span class="entry-name">Email Account</span>
+                                <span class="entry-user">john.doe@email.com</span>
+                            </div>
+                            <span class="entry-copy">📋</span>
+                        </div>
+                        <div class="mockup-entry">
+                            <span class="entry-icon">🏦</span>
+                            <div class="entry-info">
+                                <span class="entry-name">Banking Portal</span>
+                                <span class="entry-user">johndoe123</span>
+                            </div>
+                            <span class="entry-copy">📋</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to manage your passwords securely and efficiently.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Local Encrypted Vault</h3>
+                    <p>Your passwords are stored in an encrypted vault on your machine. They never leave your device or get uploaded to any server.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Dual Interface</h3>
+                    <p>Choose between a modern graphical interface or a powerful command-line tool. Use whichever fits your workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Browser Extension</h3>
+                    <p>Seamlessly autofill login forms in Chrome, Edge, and Brave. Get domain-matched suggestions with a click.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Search</h3>
+                    <p>Fast indexed lookups find your credentials instantly, no matter how large your vault grows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Smart Clipboard</h3>
+                    <p>Copy passwords with automatic clipboard clearing. Your sensitive data doesn't linger in memory.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⌨️</div>
+                    <h3>Global Hotkey</h3>
+                    <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> anywhere to instantly show or hide Soteria.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>System Tray</h3>
+                    <p>Minimize to the system tray for quick access. Option to start minimized on system boot.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3>Password Generator</h3>
+                    <p>Generate strong, random passwords with configurable length and character sets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <div class="section-header">
+                <h2>Security First</h2>
+                <p>Built from the ground up with security as the top priority.</p>
+            </div>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div class="security-icon">🛡️</div>
+                    <div class="security-content">
+                        <h3>AES-256-GCM Encryption</h3>
+                        <p>Military-grade authenticated encryption protects your vault. Every byte is encrypted and verified for tampering.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🔑</div>
+                    <div class="security-content">
+                        <h3>Argon2id Key Derivation</h3>
+                        <p>The winner of the Password Hashing Competition. Resistant to GPU, ASIC, and side-channel attacks.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">⏱️</div>
+                    <div class="security-content">
+                        <h3>Mandatory Auto-Lock</h3>
+                        <p>Your vault automatically locks after inactivity. No option to disable—security is enforced, not optional.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🚫</div>
+                    <div class="security-content">
+                        <h3>Rate Limiting</h3>
+                        <p>Exponential backoff after failed attempts prevents brute-force attacks on your master password.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🧹</div>
+                    <div class="security-content">
+                        <h3>Secure Clipboard Clear</h3>
+                        <p>Clipboard is overwritten with random data before clearing. No traces left behind.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🏠</div>
+                    <div class="security-content">
+                        <h3>Localhost-Only IPC</h3>
+                        <p>Browser extension communication is bound to localhost. No external network access possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tech" class="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built With Modern Tech</h2>
+                <p>A robust technology stack you can trust.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <span class="tech-name">Python 3</span>
+                    <span class="tech-desc">Core Language</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Tkinter</span>
+                    <span class="tech-desc">GUI Framework</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">cryptography</span>
+                    <span class="tech-desc">AES-256-GCM</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">argon2-cffi</span>
+                    <span class="tech-desc">Key Derivation</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Manifest V3</span>
+                    <span class="tech-desc">Browser Extension</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">PyInstaller</span>
+                    <span class="tech-desc">Packaging</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keyboard Shortcuts Section -->
+    <section class="shortcuts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Keyboard Shortcuts</h2>
+                <p>Work faster with intuitive hotkeys.</p>
+            </div>
+            <div class="shortcuts-grid">
+                <div class="shortcut-item">
+                    <div class="shortcut-keys">
+                        <kbd>Ctrl</kbd><span>+</span><kbd>N</kbd>
+                    </div>
+                    <span class="shortcut-action">New Entry</span>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-keys">
+                        <kbd>Ctrl</kbd><span>+</span><kbd>F</kbd>
+                    </div>
+                    <span class="shortcut-action">Search</span>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-keys">
+                        <kbd>Ctrl</kbd><span>+</span><kbd>L</kbd>
+                    </div>
+                    <span class="shortcut-action">Lock Vault</span>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-keys">
+                        <kbd>Ctrl</kbd><span>+</span><kbd>G</kbd>
+                    </div>
+                    <span class="shortcut-action">Password Generator</span>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-keys">
+                        <kbd>Ctrl</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd>P</kbd>
+                    </div>
+                    <span class="shortcut-action">Show/Hide (Global)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Open Source & Transparent</h2>
+                <p>Soteria is a personal project built with privacy in mind. Explore the code, understand how it works, and trust what you use.</p>
+                <a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-primary btn-large">
+                    <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                    <span>Soteria</span>
+                </div>
+                <p class="footer-tagline">A secure local password manager</p>
+                <p class="footer-copyright">&copy; 2026 Soteria. Personal project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
