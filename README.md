@@ -14,7 +14,7 @@ To host this site on GitHub:
    - **Folder:** `/gh-pages`
 5. Click **Save**
 
-Your site will be available at: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+Your site will be available at: `https://nikokiru.github.io/soteria/`
 
 ## Alternative: Using /docs folder
 
