@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2E7D6B"/>
+      <stop offset="100%" style="stop-color:#246358"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect width="800" height="600" fill="#F5F7FA" rx="8"/>
+
+  <!-- Title Bar -->
+  <rect width="800" height="40" fill="url(#headerGrad)" rx="8"/>
+  <rect x="0" y="32" width="800" height="16" fill="url(#headerGrad)"/>
+
+  <!-- Window Controls -->
+  <circle cx="20" cy="20" r="6" fill="#E74C3C"/>
+  <circle cx="40" cy="20" r="6" fill="#F1C40F"/>
+  <circle cx="60" cy="20" r="6" fill="#27AE60"/>
+
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Soteria Password Manager</text>
+
+  <!-- Header Bar -->
+  <rect x="0" y="40" width="800" height="50" fill="white" filter="url(#shadow)"/>
+  <text x="24" y="72" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600">My Vault</text>
+
+  <!-- Action Buttons -->
+  <rect x="640" y="52" width="70" height="28" rx="6" fill="#2E7D6B"/>
+  <text x="675" y="71" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">+ Add</text>
+
+  <rect x="720" y="52" width="60" height="28" rx="6" fill="#E1E8ED"/>
+  <text x="750" y="71" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">Lock</text>
+
+  <!-- Search Bar -->
+  <rect x="24" y="110" width="752" height="44" rx="8" fill="white" stroke="#E1E8ED" stroke-width="2"/>
+  <text x="56" y="138" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="14">Search passwords...</text>
+  <text x="44" y="138" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="16">🔍</text>
+
+  <!-- Entry List -->
+  <!-- Entry 1 - GitHub -->
+  <rect x="24" y="174" width="752" height="72" rx="8" fill="white" filter="url(#shadow)"/>
+  <circle cx="64" cy="210" r="24" fill="#24292E"/>
+  <text x="64" y="216" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="18">G</text>
+  <text x="104" y="200" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">GitHub</text>
+  <text x="104" y="222" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">developer@example.com</text>
+  <rect x="680" y="196" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="696" y="215" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">📋</text>
+  <rect x="720" y="196" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="736" y="215" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">👁</text>
+
+  <!-- Entry 2 - Google -->
+  <rect x="24" y="258" width="752" height="72" rx="8" fill="white" filter="url(#shadow)"/>
+  <circle cx="64" cy="294" r="24" fill="#4285F4"/>
+  <text x="64" y="300" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="18">G</text>
+  <text x="104" y="284" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Google Account</text>
+  <text x="104" y="306" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">john.smith@gmail.com</text>
+  <rect x="680" y="280" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="696" y="299" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">📋</text>
+  <rect x="720" y="280" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="736" y="299" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">👁</text>
+
+  <!-- Entry 3 - Amazon -->
+  <rect x="24" y="342" width="752" height="72" rx="8" fill="white" filter="url(#shadow)"/>
+  <circle cx="64" cy="378" r="24" fill="#FF9900"/>
+  <text x="64" y="384" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="18">A</text>
+  <text x="104" y="368" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Amazon</text>
+  <text x="104" y="390" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">shopper_john</text>
+  <rect x="680" y="364" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="696" y="383" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">📋</text>
+  <rect x="720" y="364" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="736" y="383" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">👁</text>
+
+  <!-- Entry 4 - Netflix -->
+  <rect x="24" y="426" width="752" height="72" rx="8" fill="white" filter="url(#shadow)"/>
+  <circle cx="64" cy="462" r="24" fill="#E50914"/>
+  <text x="64" y="468" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="18">N</text>
+  <text x="104" y="452" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Netflix</text>
+  <text x="104" y="474" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">john.smith@example.com</text>
+  <rect x="680" y="448" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="696" y="467" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">📋</text>
+  <rect x="720" y="448" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="736" y="467" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">👁</text>
+
+  <!-- Entry 5 - Bank -->
+  <rect x="24" y="510" width="752" height="72" rx="8" fill="white" filter="url(#shadow)"/>
+  <circle cx="64" cy="546" r="24" fill="#1A5F7A"/>
+  <text x="64" y="552" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="18">B</text>
+  <text x="104" y="536" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Banking Portal</text>
+  <text x="104" y="558" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">john_smith_2024</text>
+  <rect x="680" y="532" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="696" y="551" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">📋</text>
+  <rect x="720" y="532" width="32" height="28" rx="4" fill="#F5F7FA"/>
+  <text x="736" y="551" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="14">👁</text>
+</svg>

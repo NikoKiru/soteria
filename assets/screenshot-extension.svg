@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520">
+  <defs>
+    <linearGradient id="extHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2E7D6B"/>
+      <stop offset="100%" style="stop-color:#246358"/>
+    </linearGradient>
+    <filter id="extShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <clipPath id="roundedClip">
+      <rect width="400" height="520" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Extension Popup Frame -->
+  <rect width="400" height="520" fill="#F5F7FA" rx="12" filter="url(#extShadow)"/>
+
+  <!-- Header -->
+  <rect width="400" height="60" fill="url(#extHeaderGrad)" rx="12" clip-path="url(#roundedClip)"/>
+  <rect x="0" y="48" width="400" height="20" fill="url(#extHeaderGrad)"/>
+
+  <!-- Logo and Title -->
+  <circle cx="32" cy="30" r="16" fill="rgba(255,255,255,0.2)"/>
+  <text x="32" y="36" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="16">🔐</text>
+  <text x="58" y="28" fill="white" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Soteria</text>
+  <text x="58" y="44" fill="rgba(255,255,255,0.8)" font-family="Segoe UI, sans-serif" font-size="11">Vault Unlocked</text>
+
+  <!-- Lock Button -->
+  <rect x="340" y="18" width="44" height="26" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="362" y="36" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="11">Lock</text>
+
+  <!-- Current Site Section -->
+  <rect x="16" y="76" width="368" height="60" rx="8" fill="white" filter="url(#extShadow)"/>
+  <text x="32" y="100" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11">CURRENT SITE</text>
+  <text x="32" y="120" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">github.com</text>
+  <circle cx="356" cy="106" r="10" fill="#27AE60"/>
+  <text x="356" y="110" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="10">1</text>
+
+  <!-- Search Bar -->
+  <rect x="16" y="152" width="368" height="40" rx="8" fill="white" stroke="#E1E8ED" stroke-width="1"/>
+  <text x="44" y="178" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="13">🔍  Search passwords...</text>
+
+  <!-- Matching Entries Header -->
+  <text x="16" y="220" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">MATCHING ENTRIES</text>
+
+  <!-- Entry 1 - GitHub Match -->
+  <rect x="16" y="236" width="368" height="64" rx="8" fill="white" filter="url(#extShadow)"/>
+  <rect x="16" y="236" width="4" height="64" rx="2" fill="#2E7D6B"/>
+  <circle cx="48" cy="268" r="18" fill="#24292E"/>
+  <text x="48" y="274" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="14">G</text>
+  <text x="78" y="260" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">GitHub</text>
+  <text x="78" y="280" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="12">developer@example.com</text>
+  <rect x="310" y="254" width="60" height="28" rx="6" fill="#2E7D6B"/>
+  <text x="340" y="273" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">Autofill</text>
+
+  <!-- Other Entries Header -->
+  <text x="16" y="328" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">OTHER ENTRIES</text>
+
+  <!-- Entry 2 - Google -->
+  <rect x="16" y="344" width="368" height="56" rx="8" fill="white" filter="url(#extShadow)"/>
+  <circle cx="48" cy="372" r="16" fill="#4285F4"/>
+  <text x="48" y="378" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="12">G</text>
+  <text x="76" y="366" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Google Account</text>
+  <text x="76" y="384" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11">john.smith@gmail.com</text>
+  <rect x="340" y="360" width="28" height="24" rx="4" fill="#F5F7FA"/>
+  <text x="354" y="377" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="12">📋</text>
+
+  <!-- Entry 3 - Amazon -->
+  <rect x="16" y="408" width="368" height="56" rx="8" fill="white" filter="url(#extShadow)"/>
+  <circle cx="48" cy="436" r="16" fill="#FF9900"/>
+  <text x="48" y="442" text-anchor="middle" fill="white" font-family="Segoe UI, sans-serif" font-size="12">A</text>
+  <text x="76" y="430" fill="#2C3E50" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Amazon</text>
+  <text x="76" y="448" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11">shopper_john</text>
+  <rect x="340" y="424" width="28" height="24" rx="4" fill="#F5F7FA"/>
+  <text x="354" y="441" text-anchor="middle" fill="#5D6D7E" font-family="Segoe UI, sans-serif" font-size="12">📋</text>
+
+  <!-- Footer -->
+  <rect x="0" y="480" width="400" height="40" fill="#F0F3F5" rx="0"/>
+  <rect x="0" y="480" width="400" height="8" fill="#F0F3F5"/>
+  <text x="200" y="505" text-anchor="middle" fill="#95A5A6" font-family="Segoe UI, sans-serif" font-size="11">5 passwords stored securely</text>
+</svg>

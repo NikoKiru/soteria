@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50"/>
+      <stop offset="100%" style="stop-color:#1a252f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Terminal Window -->
+  <rect width="800" height="500" fill="url(#termGrad)" rx="8"/>
+
+  <!-- Title Bar -->
+  <rect width="800" height="36" fill="#1a252f" rx="8"/>
+  <rect x="0" y="28" width="800" height="16" fill="#1a252f"/>
+
+  <!-- Window Controls -->
+  <circle cx="20" cy="18" r="6" fill="#E74C3C"/>
+  <circle cx="40" cy="18" r="6" fill="#F1C40F"/>
+  <circle cx="60" cy="18" r="6" fill="#27AE60"/>
+
+  <!-- Title -->
+  <text x="400" y="23" text-anchor="middle" fill="#95A5A6" font-family="Consolas, monospace" font-size="13">Terminal - soteria</text>
+
+  <!-- Terminal Content -->
+  <text x="20" y="70" fill="#27AE60" font-family="Consolas, monospace" font-size="14">$</text>
+  <text x="35" y="70" fill="#ECF0F1" font-family="Consolas, monospace" font-size="14">python main.py list</text>
+
+  <text x="20" y="100" fill="#3498DB" font-family="Consolas, monospace" font-size="14">Your saved passwords:</text>
+  <text x="20" y="125" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">────────────────────────────────────────────────────</text>
+
+  <!-- Entry List -->
+  <text x="20" y="155" fill="#F1C40F" font-family="Consolas, monospace" font-size="14">1.</text>
+  <text x="50" y="155" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">GitHub</text>
+  <text x="180" y="155" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">developer@example.com</text>
+
+  <text x="20" y="180" fill="#F1C40F" font-family="Consolas, monospace" font-size="14">2.</text>
+  <text x="50" y="180" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">Google Account</text>
+  <text x="180" y="180" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">john.smith@gmail.com</text>
+
+  <text x="20" y="205" fill="#F1C40F" font-family="Consolas, monospace" font-size="14">3.</text>
+  <text x="50" y="205" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">Amazon</text>
+  <text x="180" y="205" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">shopper_john</text>
+
+  <text x="20" y="230" fill="#F1C40F" font-family="Consolas, monospace" font-size="14">4.</text>
+  <text x="50" y="230" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">Netflix</text>
+  <text x="180" y="230" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">john.smith@example.com</text>
+
+  <text x="20" y="255" fill="#F1C40F" font-family="Consolas, monospace" font-size="14">5.</text>
+  <text x="50" y="255" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">Banking Portal</text>
+  <text x="180" y="255" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">john_smith_2024</text>
+
+  <text x="20" y="285" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">────────────────────────────────────────────────────</text>
+  <text x="20" y="310" fill="#ECF0F1" font-family="Consolas, monospace" font-size="14">Total: 5 entries</text>
+
+  <!-- Second command -->
+  <text x="20" y="350" fill="#27AE60" font-family="Consolas, monospace" font-size="14">$</text>
+  <text x="35" y="350" fill="#ECF0F1" font-family="Consolas, monospace" font-size="14">python main.py get GitHub --clip</text>
+
+  <text x="20" y="380" fill="#27AE60" font-family="Consolas, monospace" font-size="14">✓</text>
+  <text x="40" y="380" fill="#ECF0F1" font-family="Consolas, monospace" font-size="14">Password for</text>
+  <text x="165" y="380" fill="#2E7D6B" font-family="Consolas, monospace" font-size="14" font-weight="bold">GitHub</text>
+  <text x="235" y="380" fill="#ECF0F1" font-family="Consolas, monospace" font-size="14">copied to clipboard!</text>
+  <text x="20" y="405" fill="#95A5A6" font-family="Consolas, monospace" font-size="14">(Clipboard will clear in 30 seconds)</text>
+
+  <!-- Cursor -->
+  <text x="20" y="450" fill="#27AE60" font-family="Consolas, monospace" font-size="14">$</text>
+  <rect x="35" y="438" width="10" height="16" fill="#27AE60">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
