@@ -22,9 +22,11 @@
                 <span>Soteria</span>
             </a>
             <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="#security">Security</a></li>
-                <li><a href="#tech">Technology</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -39,7 +41,7 @@
     <header class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Your Passwords.<br><span class="highlight">Your Machine.</span></h1>
+                <h1>Your Passwords.<br><span class="highlight typing-text" id="typing-text">Your Machine.</span></h1>
                 <p class="hero-subtitle">Soteria is a secure, local-first password manager that keeps your credentials encrypted on your own device. No cloud. No subscriptions. Just security.</p>
                 <div class="hero-badges">
                     <span class="badge">🔐 AES-256 Encryption</span>
@@ -91,6 +93,47 @@
         <div class="hero-bg"></div>
     </header>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in three simple steps. Your passwords stay on your machine.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step" data-step="1">
+                    <div class="step-icon">🔐</div>
+                    <div class="step-content">
+                        <h3>Create Your Vault</h3>
+                        <p>Set up a master password to create your encrypted vault. This is the only password you'll ever need to remember.</p>
+                    </div>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow">→</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-icon">➕</div>
+                    <div class="step-content">
+                        <h3>Add Your Entries</h3>
+                        <p>Store your passwords, generate strong new ones, and organize them by service. Add URLs and notes for easy reference.</p>
+                    </div>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow">→</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-icon">🚀</div>
+                    <div class="step-content">
+                        <h3>Access Anywhere</h3>
+                        <p>Use the desktop app, CLI, or browser extension. Your vault stays local while you get seamless access.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
@@ -138,6 +181,116 @@
                     <div class="feature-icon">🎲</div>
                     <h3>Password Generator</h3>
                     <p>Generate strong, random passwords with configurable length and character sets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Password Generator Demo -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Try the Password Generator</h2>
+                <p>Generate strong, random passwords right here. Same algorithm Soteria uses.</p>
+            </div>
+            <div class="demo-container">
+                <div class="generator-box">
+                    <div class="generated-password-display">
+                        <input type="text" id="generated-password" readonly value="Click Generate to Start">
+                        <div class="password-actions">
+                            <button class="btn-icon" id="copy-password" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                                <span class="copy-feedback">Copied!</span>
+                            </button>
+                            <button class="btn-icon" id="regenerate-password" title="Generate new password">🔄</button>
+                        </div>
+                    </div>
+                    <div class="strength-indicator">
+                        <div class="strength-bar" id="strength-bar"></div>
+                        <span class="strength-label" id="strength-label">Password Strength</span>
+                    </div>
+                    <div class="generator-controls">
+                        <div class="control-group">
+                            <label for="password-length">Length: <span id="length-value">20</span></label>
+                            <input type="range" id="password-length" min="8" max="64" value="20">
+                        </div>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="include-uppercase" checked>
+                                <span class="checkmark"></span>
+                                Uppercase (A-Z)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="include-lowercase" checked>
+                                <span class="checkmark"></span>
+                                Lowercase (a-z)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="include-numbers" checked>
+                                <span class="checkmark"></span>
+                                Numbers (0-9)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="include-symbols" checked>
+                                <span class="checkmark"></span>
+                                Symbols (!@#$%&*)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="exclude-ambiguous">
+                                <span class="checkmark"></span>
+                                Exclude Ambiguous (0O1lI)
+                            </label>
+                        </div>
+                        <button class="btn btn-primary btn-generate" id="generate-btn">Generate Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It in Action</h2>
+                <p>Multiple interfaces to fit your workflow.</p>
+            </div>
+            <div class="screenshot-gallery">
+                <div class="screenshot-card" data-screenshot="gui">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-content">
+                            <span class="placeholder-icon">🖥️</span>
+                            <span class="placeholder-filename">screenshot-gui.png</span>
+                            <span class="placeholder-hint">Desktop Application</span>
+                        </div>
+                        <img src="assets/screenshot-gui.png" alt="Soteria Desktop Application" class="screenshot-img" onerror="this.style.display='none'">
+                    </div>
+                    <h3>Desktop App</h3>
+                    <p>Modern GUI with all features at your fingertips</p>
+                </div>
+                <div class="screenshot-card" data-screenshot="cli">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-content">
+                            <span class="placeholder-icon">⌨️</span>
+                            <span class="placeholder-filename">screenshot-cli.png</span>
+                            <span class="placeholder-hint">Command Line Interface</span>
+                        </div>
+                        <img src="assets/screenshot-cli.png" alt="Soteria CLI" class="screenshot-img" onerror="this.style.display='none'">
+                    </div>
+                    <h3>Command Line</h3>
+                    <p>Powerful CLI for automation and scripting</p>
+                </div>
+                <div class="screenshot-card" data-screenshot="extension">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-content">
+                            <span class="placeholder-icon">🌐</span>
+                            <span class="placeholder-filename">screenshot-extension.png</span>
+                            <span class="placeholder-hint">Browser Extension</span>
+                        </div>
+                        <img src="assets/screenshot-extension.png" alt="Soteria Browser Extension" class="screenshot-img" onerror="this.style.display='none'">
+                    </div>
+                    <h3>Browser Extension</h3>
+                    <p>Seamless autofill in Chrome, Edge, and Brave</p>
                 </div>
             </div>
         </div>
@@ -193,6 +346,59 @@
                         <p>Browser extension communication is bound to localhost. No external network access possible.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Local Comparison Section -->
+    <section id="why-local" class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Local?</h2>
+                <p>See how Soteria compares to cloud-based password managers.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Cloud Managers</th>
+                            <th class="soteria-col">Soteria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Location</td>
+                            <td><span class="compare-neutral">Their servers</span></td>
+                            <td class="soteria-col"><span class="compare-good">Your machine ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Cost</td>
+                            <td><span class="compare-bad">$3-5/month</span></td>
+                            <td class="soteria-col"><span class="compare-good">Free forever ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Internet Required</td>
+                            <td><span class="compare-bad">Yes, for sync</span></td>
+                            <td class="soteria-col"><span class="compare-good">No ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Server Breaches</td>
+                            <td><span class="compare-bad">Risk exists</span></td>
+                            <td class="soteria-col"><span class="compare-good">Impossible ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Trust Third Party</td>
+                            <td><span class="compare-neutral">Required</span></td>
+                            <td class="soteria-col"><span class="compare-good">No ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Open Source</td>
+                            <td><span class="compare-neutral">Some are</span></td>
+                            <td class="soteria-col"><span class="compare-good">Fully ✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -275,6 +481,63 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Soteria.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How secure is my data?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your data is protected by <strong>AES-256-GCM encryption</strong>, the same standard used by governments and banks. Your master password is processed through <strong>Argon2id</strong>, the winner of the Password Hashing Competition, using 128MB of memory to resist brute-force attacks. The encrypted vault file is unreadable without your master password—even to Soteria.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if I forget my master password?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>There is <strong>no recovery option</strong>—this is intentional. Without your master password, your vault cannot be decrypted by anyone, including us. This is the cornerstone of Soteria's security model: true encryption means true privacy. We recommend storing your master password in a secure physical location as a backup.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I sync across devices?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Soteria doesn't include cloud sync by design. However, you can manually transfer your vault file (<code>~/.soteria/vault.json</code>) to other devices using USB, encrypted email, or your own secure file sync solution. The vault is fully encrypted, so it's safe to move around.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is Soteria really free?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes, completely free.</strong> Soteria is a personal project released as open source. There are no premium tiers, no subscriptions, no hidden costs. The source code is available on GitHub for anyone to inspect, modify, or contribute to.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What platforms are supported?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Soteria officially supports <strong>Windows</strong> with a native executable. Since it's built with Python, it can also run on <strong>macOS</strong> and <strong>Linux</strong> by running from source. The browser extension works with <strong>Chrome, Edge, and Brave</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -309,7 +572,7 @@
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
+
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
@@ -353,8 +616,181 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item').forEach(el => {
+        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item, .step, .screenshot-card, .faq-item').forEach(el => {
             observer.observe(el);
+        });
+
+        // ============================================
+        // Typing Animation for Hero
+        // ============================================
+        const typingPhrases = [
+            'Your Machine.',
+            'Zero Cloud. Zero Risk.',
+            'Encrypted. Local. Yours.'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+        const typingSpeed = 80;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+
+        function typeText() {
+            const currentPhrase = typingPhrases[phraseIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                timeout = pauseTime;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+                timeout = 500;
+            }
+
+            setTimeout(typeText, timeout);
+        }
+
+        // Start typing animation
+        setTimeout(typeText, 1000);
+
+        // ============================================
+        // Password Generator
+        // ============================================
+        const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+        const numberChars = '0123456789';
+        const symbolChars = '!@#$%&*()_+-=[]{}|;:,.<>?';
+        const ambiguousChars = '0O1lI|\'"`';
+
+        const passwordInput = document.getElementById('generated-password');
+        const lengthSlider = document.getElementById('password-length');
+        const lengthValue = document.getElementById('length-value');
+        const generateBtn = document.getElementById('generate-btn');
+        const copyBtn = document.getElementById('copy-password');
+        const regenerateBtn = document.getElementById('regenerate-password');
+        const strengthBar = document.getElementById('strength-bar');
+        const strengthLabel = document.getElementById('strength-label');
+
+        const includeUppercase = document.getElementById('include-uppercase');
+        const includeLowercase = document.getElementById('include-lowercase');
+        const includeNumbers = document.getElementById('include-numbers');
+        const includeSymbols = document.getElementById('include-symbols');
+        const excludeAmbiguous = document.getElementById('exclude-ambiguous');
+
+        lengthSlider.addEventListener('input', () => {
+            lengthValue.textContent = lengthSlider.value;
+        });
+
+        function generatePassword() {
+            let chars = '';
+
+            if (includeUppercase.checked) chars += uppercaseChars;
+            if (includeLowercase.checked) chars += lowercaseChars;
+            if (includeNumbers.checked) chars += numberChars;
+            if (includeSymbols.checked) chars += symbolChars;
+
+            if (chars === '') {
+                passwordInput.value = 'Select at least one option';
+                updateStrength(0);
+                return;
+            }
+
+            if (excludeAmbiguous.checked) {
+                for (const char of ambiguousChars) {
+                    chars = chars.replace(new RegExp(char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), '');
+                }
+            }
+
+            const length = parseInt(lengthSlider.value);
+            let password = '';
+            const array = new Uint32Array(length);
+            crypto.getRandomValues(array);
+
+            for (let i = 0; i < length; i++) {
+                password += chars[array[i] % chars.length];
+            }
+
+            passwordInput.value = password;
+            updateStrength(calculateStrength(password, chars.length));
+        }
+
+        function calculateStrength(password, charsetSize) {
+            const length = password.length;
+            const entropy = length * Math.log2(charsetSize);
+
+            if (entropy < 28) return 1; // Weak
+            if (entropy < 36) return 2; // Fair
+            if (entropy < 60) return 3; // Good
+            if (entropy < 128) return 4; // Strong
+            return 5; // Very Strong
+        }
+
+        function updateStrength(level) {
+            const colors = ['#E74C3C', '#E67E22', '#F1C40F', '#27AE60', '#2E7D6B'];
+            const labels = ['Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+            const widths = ['20%', '40%', '60%', '80%', '100%'];
+
+            if (level === 0) {
+                strengthBar.style.width = '0%';
+                strengthLabel.textContent = 'Password Strength';
+                return;
+            }
+
+            strengthBar.style.width = widths[level - 1];
+            strengthBar.style.background = colors[level - 1];
+            strengthLabel.textContent = labels[level - 1];
+        }
+
+        generateBtn.addEventListener('click', generatePassword);
+        regenerateBtn.addEventListener('click', generatePassword);
+
+        copyBtn.addEventListener('click', async () => {
+            if (passwordInput.value && passwordInput.value !== 'Click Generate to Start' && passwordInput.value !== 'Select at least one option') {
+                await navigator.clipboard.writeText(passwordInput.value);
+                copyBtn.classList.add('copied');
+                setTimeout(() => copyBtn.classList.remove('copied'), 2000);
+            }
+        });
+
+        // ============================================
+        // FAQ Accordion
+        // ============================================
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // Screenshot Image Loading
+        // ============================================
+        document.querySelectorAll('.screenshot-img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.display = 'block';
+                this.previousElementSibling.style.display = 'none';
+            });
         });
     </script>
 </body>
