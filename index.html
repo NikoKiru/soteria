@@ -260,11 +260,11 @@
                     <div class="screenshot-placeholder">
                         <div class="placeholder-content">
                             <span class="placeholder-icon">🖥️</span>
-                            <span class="placeholder-filename">screenshot-gui.png</span>
+                            <span class="placeholder-filename">screenshot-gui.svg</span>
                             <span class="placeholder-hint">Desktop Application</span>
                         </div>
-                        <img src="assets/screenshot-gui.png" alt="Soteria Desktop Application" class="screenshot-img" onerror="this.style.display='none'">
                     </div>
+                    <img src="assets/screenshot-gui.svg" alt="Soteria Desktop Application" class="screenshot-img">
                     <h3>Desktop App</h3>
                     <p>Modern GUI with all features at your fingertips</p>
                 </div>
@@ -272,11 +272,11 @@
                     <div class="screenshot-placeholder">
                         <div class="placeholder-content">
                             <span class="placeholder-icon">⌨️</span>
-                            <span class="placeholder-filename">screenshot-cli.png</span>
+                            <span class="placeholder-filename">screenshot-cli.svg</span>
                             <span class="placeholder-hint">Command Line Interface</span>
                         </div>
-                        <img src="assets/screenshot-cli.png" alt="Soteria CLI" class="screenshot-img" onerror="this.style.display='none'">
                     </div>
+                    <img src="assets/screenshot-cli.svg" alt="Soteria CLI" class="screenshot-img">
                     <h3>Command Line</h3>
                     <p>Powerful CLI for automation and scripting</p>
                 </div>
@@ -284,11 +284,11 @@
                     <div class="screenshot-placeholder">
                         <div class="placeholder-content">
                             <span class="placeholder-icon">🌐</span>
-                            <span class="placeholder-filename">screenshot-extension.png</span>
+                            <span class="placeholder-filename">screenshot-extension.svg</span>
                             <span class="placeholder-hint">Browser Extension</span>
                         </div>
-                        <img src="assets/screenshot-extension.png" alt="Soteria Browser Extension" class="screenshot-img" onerror="this.style.display='none'">
                     </div>
+                    <img src="assets/screenshot-extension.svg" alt="Soteria Browser Extension" class="screenshot-img">
                     <h3>Browser Extension</h3>
                     <p>Seamless autofill in Chrome, Edge, and Brave</p>
                 </div>
@@ -789,8 +789,15 @@
         document.querySelectorAll('.screenshot-img').forEach(img => {
             img.addEventListener('load', function() {
                 this.style.display = 'block';
-                this.previousElementSibling.style.display = 'none';
+                const placeholder = this.previousElementSibling;
+                if (placeholder && placeholder.classList.contains('screenshot-placeholder')) {
+                    placeholder.style.display = 'none';
+                }
             });
+            // Trigger load event if already cached
+            if (img.complete) {
+                img.dispatchEvent(new Event('load'));
+            }
         });
     </script>
 </body>
