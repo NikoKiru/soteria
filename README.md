@@ -1,51 +1,243 @@
-# Soteria - GitHub Pages
+# Soteria
 
-This folder contains the public-facing website for Soteria, hosted via GitHub Pages.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9+-green.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 
-## Enabling GitHub Pages
+A secure, local-first password manager with desktop GUI, CLI, and browser extension.
 
-To host this site on GitHub:
+---
 
-1. Push this repository to GitHub
-2. Go to your repository on GitHub
-3. Navigate to **Settings** → **Pages**
-4. Under **Source**, select:
-   - **Branch:** `main` (or your default branch)
-   - **Folder:** `/gh-pages`
-5. Click **Save**
+## Architecture
 
-Your site will be available at: `https://nikokiru.github.io/soteria/`
-
-## Alternative: Using /docs folder
-
-If GitHub doesn't allow selecting `/gh-pages`, you can:
-
-1. Rename this folder from `gh-pages` to `docs`
-2. In GitHub Pages settings, select `/docs` as the source folder
-
-## Local Preview
-
-To preview the site locally, you can:
-
-**Option 1: Python HTTP Server**
-```bash
-cd gh-pages
-python -m http.server 8000
 ```
-Then open http://localhost:8000
+┌─────────────────────────────────────────────────────────────┐
+│                    User Interfaces                          │
+├───────────────┬───────────────┬─────────────────────────────┤
+│  Desktop GUI  │      CLI      │     Browser Extension       │
+│  (Tkinter)    │   (argparse)  │   (Chrome/Edge/Brave)       │
+└───────┬───────┴───────┬───────┴──────────────┬──────────────┘
+        │               │                      │
+        │               │          IPC (localhost:8722)
+        │               │                      │
+        ▼               ▼                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   Core Library (soteria/)                   │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐    │
+│  │ vault.py │  │crypto.py │  │storage.py│  │models.py │    │
+│  │   CRUD   │  │ AES-GCM  │  │ Atomic   │  │ Password │    │
+│  │  Index   │  │ Argon2id │  │  Writes  │  │  Entry   │    │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘    │
+└────────────────────────────┬────────────────────────────────┘
+                             │
+                             ▼
+                 ~/.soteria/vault.json
+                      (encrypted)
+```
 
-**Option 2: VS Code Live Server**
-Install the "Live Server" extension and right-click `index.html` → "Open with Live Server"
+---
 
-## Customization
+## Security Model
 
-- **Update GitHub link**: Replace `YOUR_USERNAME` in `index.html` with your actual GitHub username
-- **Add screenshots**: Place app screenshots in the `assets/` folder
-- **Modify content**: Edit `index.html` for content and `style.css` for styling
+### Cryptographic Choices
 
-## Files
+| Component | Algorithm | Parameters |
+|-----------|-----------|------------|
+| Key Derivation | Argon2id | 4 iterations, 128 MB memory, 4 threads |
+| Encryption | AES-256-GCM | 12-byte nonce, authenticated |
+| Salt | Random | 16 bytes per vault |
+| Entry IDs | UUID4 | Cryptographically random |
 
-- `index.html` - Main webpage
-- `style.css` - Stylesheet
-- `assets/` - Images and icons
-  - `soteria.png` - App icon
+### Vault File Format
+
+```json
+{
+  "salt": "<base64 16 bytes>",
+  "nonce": "<base64 12 bytes>",
+  "data": "<base64 encrypted JSON>"
+}
+```
+
+### Runtime Protections
+
+- **Auto-lock**: Configurable 1-30 minute timeout
+- **Clipboard clear**: Configurable 15s-2min with secure overwrite
+- **Rate limiting**: Exponential backoff after 5 failed unlock attempts
+- **File permissions**: 0600 (Unix) for vault file
+- **Password field auto-hide**: 10 second timeout
+
+---
+
+## IPC Server API
+
+The desktop app exposes a localhost HTTP API for browser extension communication.
+
+**Base URL:** `http://127.0.0.1:8722`
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/vault/status` | POST | Check if vault is unlocked |
+| `/api/vault/unlock` | POST | Unlock vault with password |
+| `/api/vault/lock` | POST | Lock the vault |
+| `/api/entries/search` | POST | Search entries by query/domain |
+| `/api/entries/get` | POST | Get entry with password by ID |
+| `/api/entries/add` | POST | Add new entry |
+
+### Security Constraints
+
+- Binds only to `127.0.0.1` (localhost)
+- CORS validated for extension origins
+- Passwords never cached in extension
+- Extension cannot unlock vault independently
+
+---
+
+## Data Flow
+
+### Encryption (Save)
+
+```
+Password Entry → JSON serialize → AES-256-GCM encrypt → Base64 encode → Write file
+                                        ↑
+                        Master Password → Argon2id → 256-bit key
+```
+
+### Decryption (Load)
+
+```
+Read file → Base64 decode → AES-256-GCM decrypt → JSON parse → Password Entry
+                                  ↑
+                  Master Password → Argon2id → 256-bit key
+```
+
+GCM authentication tag validates decryption - wrong password = `InvalidTag` exception.
+
+---
+
+## Dependencies
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| cryptography | >=41.0.0 | AES-256-GCM encryption |
+| argon2-cffi | >=23.1.0 | Argon2id key derivation |
+| pyperclip | >=1.8.0 | Clipboard access (optional) |
+| keyboard | >=0.13.5 | Global hotkey (optional) |
+| pystray | >=0.19.0 | System tray (optional) |
+| Pillow | >=9.0.0 | Tray icon rendering (optional) |
+
+---
+
+## Building & Testing
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run Tests
+
+```bash
+python test_soteria.py
+```
+
+### Build Executable (Windows)
+
+```powershell
+.\build.bat
+```
+
+Output: `dist\SoteriaApp\SoteriaApp.exe`
+
+### Run Application
+
+```bash
+# GUI mode
+python main.py --gui
+
+# CLI mode
+python main.py <command>
+
+# Start minimized to tray
+python main.py --gui --minimized
+```
+
+---
+
+## Browser Extension
+
+### Architecture
+
+```
+browser_extension/
+├── manifest.json     # Manifest V3 config
+├── background.js     # Service worker, IPC client
+├── content.js        # Form detection, autofill
+└── popup.html/js/css # Extension UI
+```
+
+### Installation
+
+1. Open `chrome://extensions` (or `edge://extensions`)
+2. Enable "Developer mode"
+3. Click "Load unpacked"
+4. Select the `browser_extension/` folder
+
+### Permissions
+
+- `activeTab`: Autofill on current page
+- `clipboardWrite`: Copy passwords
+- `tabs`: Get current domain
+- `host_permissions`: `http://127.0.0.1:8722/*` for IPC
+
+---
+
+## Contributing
+
+### Code Structure
+
+```
+soteria/
+├── vault.py      # Vault class - all CRUD operations
+├── crypto.py     # Encryption/decryption primitives
+├── storage.py    # File I/O with atomic writes
+├── models.py     # PasswordEntry dataclass
+├── cli.py        # CLI argument handling
+├── ipc_server.py # HTTP API for browser extension
+└── gui/
+    ├── app.py    # Main Tkinter application
+    ├── styles.py # Color scheme and fonts
+    ├── tray.py   # System tray integration
+    ├── frames/   # Login and main vault frames
+    ├── dialogs/  # Entry, generator, settings dialogs
+    └── widgets/  # PasswordField, Toast components
+```
+
+### Input Validation Limits
+
+| Field | Max Length |
+|-------|------------|
+| Service | 100 chars |
+| Username | 255 chars |
+| Password | 1024 chars |
+| URL | 2048 chars |
+| Notes | 10000 chars |
+
+### Key Implementation Notes
+
+1. Multiple entries per service allowed (different usernames)
+2. Search is case-insensitive substring match
+3. Entry IDs are UUID4, stable across lock/unlock
+4. Master password change regenerates salt
+5. Atomic file writes (temp file + rename)
+6. O(1) entry lookup via ID and service indexes
+
+---
+
+## License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
+**GitHub:** [github.com/nikokiru/soteria](https://github.com/nikokiru/soteria)
