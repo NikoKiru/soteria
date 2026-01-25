@@ -538,6 +538,38 @@
         </div>
     </section>
 
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perfect For</h2>
+                <p>Whether you're privacy-conscious or security-focused, Soteria fits your needs.</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">&#128187;</div>
+                    <h3>Developers</h3>
+                    <p>Keep API keys, database credentials, and service passwords secure locally. CLI support makes it script-friendly.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">&#127968;</div>
+                    <h3>Privacy Enthusiasts</h3>
+                    <p>Your data never leaves your machine. No telemetry, no cloud sync, no third-party servers.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">&#127961;</div>
+                    <h3>Air-Gapped Systems</h3>
+                    <p>Works completely offline. Perfect for secure environments with no internet access.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">&#128218;</div>
+                    <h3>Students & Educators</h3>
+                    <p>Free forever with open source code. Learn cryptography by reading the implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -557,13 +589,30 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
-                    <span>Soteria</span>
+            <div class="footer-grid">
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                        <span>Soteria</span>
+                    </div>
+                    <p class="footer-tagline">A secure local password manager</p>
                 </div>
-                <p class="footer-tagline">A secure local password manager</p>
-                <p class="footer-copyright">&copy; 2026 Soteria. Personal project.</p>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#features">Features</a>
+                    <a href="#security">Security</a>
+                    <a href="#demo">Password Generator</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank">GitHub</a>
+                    <a href="https://github.com/nikokiru/soteria/issues" target="_blank">Report Bug</a>
+                    <a href="https://github.com/nikokiru/soteria/blob/main/LICENSE" target="_blank">License</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Soteria. Open source project.</p>
             </div>
         </div>
     </footer>
@@ -616,8 +665,34 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item, .step, .screenshot-card, .faq-item').forEach(el => {
+        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item, .step, .screenshot-card, .faq-item, .use-case-card').forEach(el => {
             observer.observe(el);
+        });
+
+        // ============================================
+        // Interactive Mockup Entries
+        // ============================================
+        document.querySelectorAll('.mockup-entry').forEach((entry, index) => {
+            // Add staggered animation on load
+            entry.style.animationDelay = `${0.5 + index * 0.1}s`;
+
+            // Click to copy effect
+            entry.addEventListener('click', () => {
+                entry.classList.add('copied');
+                const copyIcon = entry.querySelector('.entry-copy');
+                if (copyIcon) {
+                    copyIcon.textContent = '✓';
+                    setTimeout(() => {
+                        copyIcon.textContent = '📋';
+                        entry.classList.remove('copied');
+                    }, 1500);
+                }
+            });
+        });
+
+        // Hero badges stagger animation
+        document.querySelectorAll('.hero-badges .badge').forEach((badge, index) => {
+            badge.style.animationDelay = `${0.8 + index * 0.15}s`;
         });
 
         // ============================================
