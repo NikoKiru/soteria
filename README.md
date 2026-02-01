@@ -118,12 +118,21 @@ GCM authentication tag validates decryption - wrong password = `InvalidTag` exce
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| cryptography | >=41.0.0 | AES-256-GCM encryption |
-| argon2-cffi | >=23.1.0 | Argon2id key derivation |
-| pyperclip | >=1.8.0 | Clipboard access (optional) |
-| keyboard | >=0.13.5 | Global hotkey (optional) |
-| pystray | >=0.19.0 | System tray (optional) |
-| Pillow | >=9.0.0 | Tray icon rendering (optional) |
+| cryptography | ==42.0.8 | AES-256-GCM encryption |
+| argon2-cffi | ==23.1.0 | Argon2id key derivation |
+| pyperclip | ==1.9.0 | Clipboard access (optional) |
+| keyboard | ==0.13.5 | Global hotkey (optional) |
+| pystray | ==0.19.5 | System tray (optional) |
+| Pillow | ==12.1.0 | Tray icon rendering (optional) |
+
+### Dev Dependencies (`requirements-dev.txt`)
+
+| Package | Purpose |
+|---------|---------|
+| ruff | Linter |
+| mypy | Type checker |
+| pytest | Test runner |
+| pyinstaller | Build tool |
 
 ---
 
@@ -138,7 +147,8 @@ pip install -r requirements.txt
 ### Run Tests
 
 ```bash
-python test_soteria.py
+python -m pytest tests/ -v   # Recommended (pytest)
+python test_soteria.py        # Legacy runner
 ```
 
 ### Build Executable (Windows)
@@ -161,6 +171,28 @@ python main.py <command>
 # Start minimized to tray
 python main.py --gui --minimized
 ```
+
+---
+
+## Website (gh-pages/)
+
+```
+gh-pages/
+├── index.html      # Landing page
+├── updates.html    # Blog/updates feed
+├── style.css       # Shared styles
+├── sitemap.xml     # SEO sitemap
+├── robots.txt      # Crawler directives
+└── assets/         # Images
+```
+
+### Adding Updates
+
+1. Open `gh-pages/updates.html`
+2. Copy an existing `<article class="update-card">` block
+3. Paste it above the most recent entry (newest first)
+4. Change the date, badge class, title, and content
+5. Badge classes: `badge-feature`, `badge-fix`, `badge-improvement`, `badge-security`
 
 ---
 
@@ -198,19 +230,21 @@ browser_extension/
 
 ```
 soteria/
+├── __init__.py   # Package init, exports __version__
 ├── vault.py      # Vault class - all CRUD operations
 ├── crypto.py     # Encryption/decryption primitives
 ├── storage.py    # File I/O with atomic writes
 ├── models.py     # PasswordEntry dataclass
 ├── cli.py        # CLI argument handling
+├── logger.py     # Structured logging helper
 ├── ipc_server.py # HTTP API for browser extension
 └── gui/
-    ├── app.py    # Main Tkinter application
+    ├── app.py    # Main Tkinter application (version in title)
     ├── styles.py # Color scheme and fonts
     ├── tray.py   # System tray integration
-    ├── frames/   # Login and main vault frames
-    ├── dialogs/  # Entry, generator, settings dialogs
-    └── widgets/  # PasswordField, Toast components
+    ├── frames/   # Login (caps lock) and main vault (tooltips, delete hover)
+    ├── dialogs/  # Entry (inline validation), generator, settings (version)
+    └── widgets/  # PasswordField, Toast, Tooltip components
 ```
 
 ### Input Validation Limits
