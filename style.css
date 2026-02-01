@@ -1479,6 +1479,174 @@ kbd {
 .faq-item:nth-child(5) { transition-delay: 0.3s; }
 
 /* ===================================
+   Active Nav Link
+   =================================== */
+.nav-active {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+/* ===================================
+   Back to Top Button
+   =================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* ===================================
+   Page Header (for sub-pages)
+   =================================== */
+.page-header {
+    padding: 120px 0 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   Updates Feed
+   =================================== */
+.updates-feed {
+    padding: 60px 0 80px;
+    background: var(--background);
+}
+
+.update-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+    transition: box-shadow var(--transition);
+}
+
+.update-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.update-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.update-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.update-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-feature {
+    background: rgba(46, 125, 107, 0.15);
+    color: var(--primary);
+}
+
+.badge-fix {
+    background: rgba(231, 76, 60, 0.12);
+    color: var(--danger);
+}
+
+.badge-improvement {
+    background: rgba(243, 156, 18, 0.15);
+    color: #D68910;
+}
+
+.badge-security {
+    background: rgba(39, 174, 96, 0.12);
+    color: var(--success);
+}
+
+.update-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.update-content p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.update-content ul {
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.update-content li {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Responsive for updates */
+@media (max-width: 768px) {
+    .update-card {
+        padding: 20px;
+    }
+
+    .update-title {
+        font-size: 1.15rem;
+    }
+
+    .page-header {
+        padding: 100px 0 40px;
+    }
+}
+
+/* ===================================
    Responsive Updates for New Sections
    =================================== */
 @media (max-width: 968px) {

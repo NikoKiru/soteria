@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soteria Password Manager - Latest updates, features, and improvements.">
+    <title>Updates - Soteria Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Updates - Soteria Password Manager">
+    <meta property="og:description" content="Latest updates, features, and improvements for Soteria.">
+    <meta property="og:image" content="assets/soteria.png">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Updates - Soteria Password Manager">
+    <meta name="twitter:description" content="Latest updates, features, and improvements for Soteria.">
+    <meta name="twitter:image" content="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#demo">Demo</a></li>
+                <li><a href="index.html#security">Security</a></li>
+                <li><a href="updates.html" class="nav-active">Updates</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Updates</h1>
+            <p>Latest features, improvements, and fixes for Soteria.</p>
+        </div>
+    </header>
+
+    <!-- Updates Feed -->
+    <!--
+        HOW TO POST A NEW UPDATE:
+        1. Copy an existing <article class="update-card"> block below.
+        2. Paste it ABOVE the most recent entry (newest first).
+        3. Change the datetime attribute, date text, badge class, title, and content.
+        4. Badge classes: badge-feature (teal), badge-fix (red), badge-improvement (orange), badge-security (green).
+        5. Commit and push to deploy.
+    -->
+    <main class="updates-feed">
+        <div class="container">
+
+            <article class="update-card">
+                <div class="update-meta">
+                    <time datetime="2026-02-01" class="update-date">February 1, 2026</time>
+                    <span class="update-badge badge-improvement">Improvement</span>
+                </div>
+                <h2 class="update-title">UI/UX Improvements & Developer Tooling</h2>
+                <div class="update-content">
+                    <p>A round of polish across the desktop app, browser extension, and development workflow:</p>
+                    <ul>
+                        <li>Delete buttons now turn red on hover for clearer danger signaling</li>
+                        <li>Caps Lock warning on both the desktop login screen and extension unlock form</li>
+                        <li>Inline validation in the entry dialog replaces disruptive error popups</li>
+                        <li>Tooltips on header action buttons (Generator, Settings, Lock)</li>
+                        <li>ARIA labels added to all extension buttons for improved accessibility</li>
+                        <li>Better empty-search state in the extension: "No results for &lt;query&gt;"</li>
+                        <li>Added pytest test suite, pyproject.toml, pinned dependencies, and structured logging</li>
+                        <li>Version number now displayed in window title and Settings dialog</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
+                    <time datetime="2026-01-31" class="update-date">January 31, 2026</time>
+                    <span class="update-badge badge-feature">New Feature</span>
+                </div>
+                <h2 class="update-title">Browser Extension & Headless Service</h2>
+                <div class="update-content">
+                    <p>Soteria now includes a Chromium browser extension and a headless background service for seamless password autofill.</p>
+                    <ul>
+                        <li>Search and autofill passwords directly from Chrome, Edge, or Brave</li>
+                        <li>Domain-matched suggestions appear automatically on login pages</li>
+                        <li>Unlock your vault from the extension popup</li>
+                        <li>Headless service runs in the background and auto-starts on login</li>
+                        <li>Add new passwords from the extension with one click</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
+                    <time datetime="2026-01-15" class="update-date">January 15, 2026</time>
+                    <span class="update-badge badge-security">Security</span>
+                </div>
+                <h2 class="update-title">Enhanced Security Defaults</h2>
+                <div class="update-content">
+                    <p>Security improvements to ensure your vault is always protected:</p>
+                    <ul>
+                        <li>Argon2id parameters increased: 128 MB memory, 4 iterations</li>
+                        <li>"Never" option removed from auto-lock and clipboard clear timers</li>
+                        <li>Secure clipboard overwrite with random data before clearing</li>
+                        <li>Rate limiting with exponential backoff after 5 failed unlock attempts</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
+                    <time datetime="2026-01-01" class="update-date">January 1, 2026</time>
+                    <span class="update-badge badge-feature">New Feature</span>
+                </div>
+                <h2 class="update-title">Initial Release - Soteria v1.0.0</h2>
+                <div class="update-content">
+                    <p>The first public release of Soteria, a secure local-first password manager.</p>
+                    <ul>
+                        <li>AES-256-GCM encrypted vault with Argon2id key derivation</li>
+                        <li>Modern GUI with system tray and global hotkey support</li>
+                        <li>Full-featured CLI for scripting and automation</li>
+                        <li>Password generator with configurable length and character sets</li>
+                        <li>Auto-lock, clipboard clearing, and secure file permissions</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                        <span>Soteria</span>
+                    </div>
+                    <p class="footer-tagline">A secure local password manager</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#security">Security</a>
+                    <a href="index.html#demo">Password Generator</a>
+                    <a href="updates.html">Updates</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank">GitHub</a>
+                    <a href="https://github.com/nikokiru/soteria/issues" target="_blank">Report Bug</a>
+                    <a href="https://github.com/nikokiru/soteria/blob/main/LICENSE" target="_blank">License</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Soteria. Open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
