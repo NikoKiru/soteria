@@ -173,6 +173,9 @@
                     </div>
                 </div>
             </div>
+            <div class="steps-cta">
+                <a href="getting-started.html" class="btn btn-primary btn-large">View Full Setup Guide &rarr;</a>
+            </div>
         </div>
     </section>
 
@@ -343,51 +346,33 @@
         <div class="container">
             <div class="section-header">
                 <h2>Security First</h2>
-                <p>Built from the ground up with security as the top priority. <a href="security.html" style="color: rgba(255,255,255,0.9); text-decoration: underline;">Read the full whitepaper &rarr;</a></p>
+                <p>Built from the ground up with security as the top priority.</p>
             </div>
-            <div class="security-grid">
+            <div class="security-highlights">
                 <div class="security-item">
                     <div class="security-icon">🛡️</div>
                     <div class="security-content">
-                        <h3>AES-256-GCM Encryption</h3>
-                        <p>Military-grade authenticated encryption protects your vault. Every byte is encrypted and verified for tampering.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">🔑</div>
-                    <div class="security-content">
-                        <h3>Argon2id Key Derivation</h3>
-                        <p>The winner of the Password Hashing Competition. Resistant to GPU, ASIC, and side-channel attacks.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">⏱️</div>
-                    <div class="security-content">
-                        <h3>Mandatory Auto-Lock</h3>
-                        <p>Your vault automatically locks after inactivity. No option to disable—security is enforced, not optional.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">🚫</div>
-                    <div class="security-content">
-                        <h3>Rate Limiting</h3>
-                        <p>Exponential backoff after failed attempts prevents brute-force attacks on your master password.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">🧹</div>
-                    <div class="security-content">
-                        <h3>Secure Clipboard Clear</h3>
-                        <p>Clipboard is overwritten with random data before clearing. No traces left behind.</p>
+                        <h3>AES-256-GCM + Argon2id</h3>
+                        <p>Authenticated encryption with the winning password hashing algorithm. Resistant to brute-force, GPU, and side-channel attacks.</p>
                     </div>
                 </div>
                 <div class="security-item">
                     <div class="security-icon">🏠</div>
                     <div class="security-content">
-                        <h3>Localhost-Only IPC</h3>
-                        <p>Browser extension communication is bound to localhost. No external network access possible.</p>
+                        <h3>100% Local</h3>
+                        <p>Your vault never leaves your machine. No servers, no sync, no attack surface beyond your own device.</p>
                     </div>
                 </div>
+                <div class="security-item">
+                    <div class="security-icon">👁️</div>
+                    <div class="security-content">
+                        <h3>Open Source</h3>
+                        <p>Every line of code is auditable. Verify the security claims yourself—no trust required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="security-cta">
+                <a href="security.html" class="btn btn-outline btn-large security-whitepaper-btn">Read the Security Whitepaper &rarr;</a>
             </div>
         </div>
     </section>
@@ -618,12 +603,15 @@
             <div class="cta-content">
                 <h2>Open Source & Transparent</h2>
                 <p>Soteria is a personal project built with privacy in mind. Explore the code, understand how it works, and trust what you use.</p>
-                <a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-primary btn-large">
-                    <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    View on GitHub
-                </a>
+                <div class="cta-buttons">
+                    <a href="getting-started.html" class="btn btn-primary btn-large">Get Started</a>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline btn-large">
+                        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </section>

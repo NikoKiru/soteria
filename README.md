@@ -178,7 +178,7 @@ python main.py --gui --minimized
 
 ```
 gh-pages/
-├── index.html            # Landing page (hero, features, demo, security, FAQ)
+├── index.html            # Landing page (hero, features, demo, security teaser, FAQ)
 ├── getting-started.html  # Download & install guide (tabbed: GUI / Source / Extension)
 ├── security.html         # Security whitepaper (crypto, threat model, IPC)
 ├── privacy.html          # Privacy policy (zero data collection)

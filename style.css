@@ -443,6 +443,28 @@ section {
     color: white;
 }
 
+.security-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.security-cta {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.security-whitepaper-btn {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
+.security-whitepaper-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+    color: white;
+}
+
 .security-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -612,6 +634,13 @@ kbd {
 .cta-content p {
     margin-bottom: 32px;
     font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .github-icon {
@@ -817,6 +846,10 @@ kbd {
         padding: 60px 0;
     }
 
+    .security-highlights {
+        grid-template-columns: 1fr;
+    }
+
     .security-grid {
         grid-template-columns: 1fr;
     }
@@ -877,9 +910,6 @@ kbd {
 .security-item:nth-child(1) { transition-delay: 0.1s; }
 .security-item:nth-child(2) { transition-delay: 0.2s; }
 .security-item:nth-child(3) { transition-delay: 0.3s; }
-.security-item:nth-child(4) { transition-delay: 0.4s; }
-.security-item:nth-child(5) { transition-delay: 0.5s; }
-.security-item:nth-child(6) { transition-delay: 0.6s; }
 
 .tech-item:nth-child(1) { transition-delay: 0.1s; }
 .tech-item:nth-child(2) { transition-delay: 0.15s; }
@@ -1001,6 +1031,11 @@ kbd {
     font-size: 1.5rem;
     color: var(--primary);
     font-weight: bold;
+}
+
+.steps-cta {
+    text-align: center;
+    margin-top: 48px;
 }
 
 /* Animation delays for steps */
