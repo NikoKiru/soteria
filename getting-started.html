@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get started with Soteria - Download, install, and set up your secure local password manager.">
+    <title>Getting Started - Soteria Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Getting Started - Soteria Password Manager">
+    <meta property="og:description" content="Download, install, and set up your secure local password manager.">
+    <meta property="og:image" content="assets/soteria.png">
+    <meta property="og:url" content="https://nikokiru.github.io/soteria/getting-started.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Getting Started - Soteria Password Manager">
+    <meta name="twitter:description" content="Download, install, and set up your secure local password manager.">
+    <meta name="twitter:image" content="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="getting-started.html" class="nav-active">Get Started</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Get Started with Soteria</h1>
+            <p>Download, install, and secure your passwords in under five minutes.</p>
+        </div>
+    </header>
+
+    <!-- Download Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Download</h2>
+                <p>Get the latest release for your platform.</p>
+            </div>
+            <div class="download-grid">
+                <a href="https://github.com/nikokiru/soteria/releases/latest" target="_blank" class="download-card">
+                    <div class="download-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M3 17v3c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-3H3zm9-11.17V14h2V5.83l3.59 3.58L19 8l-7-7-7 7 1.41 1.41L10 5.83z" transform="rotate(180, 12, 12)"/>
+                        </svg>
+                    </div>
+                    <h3>Windows Installer</h3>
+                    <p>Download <code>SoteriaApp.exe</code> from the latest GitHub release.</p>
+                    <span class="download-badge">Latest Release</span>
+                </a>
+                <a href="https://github.com/nikokiru/soteria" target="_blank" class="download-card">
+                    <div class="download-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                        </svg>
+                    </div>
+                    <h3>Run from Source</h3>
+                    <p>Clone the repository and run with Python 3.9+ on any platform.</p>
+                    <span class="download-badge">Windows / macOS / Linux</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install Steps -->
+    <section class="content-section content-section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Installation</h2>
+                <p>Choose your preferred method.</p>
+            </div>
+
+            <div class="install-tabs">
+                <button class="install-tab active" data-tab="gui">Desktop App</button>
+                <button class="install-tab" data-tab="source">From Source</button>
+                <button class="install-tab" data-tab="extension">Browser Extension</button>
+            </div>
+
+            <!-- GUI Install -->
+            <div class="install-content active" id="tab-gui">
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="guide-step-number">1</div>
+                        <div class="guide-step-content">
+                            <h3>Download the Release</h3>
+                            <p>Go to the <a href="https://github.com/nikokiru/soteria/releases/latest" target="_blank">GitHub Releases</a> page and download <code>SoteriaApp.zip</code>.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">2</div>
+                        <div class="guide-step-content">
+                            <h3>Extract and Run</h3>
+                            <p>Extract the zip to a folder (e.g. <code>C:\Program Files\Soteria</code>) and run <code>SoteriaApp.exe</code>.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">3</div>
+                        <div class="guide-step-content">
+                            <h3>Create Your Vault</h3>
+                            <p>On first launch, you'll be prompted to create a master password. This is the only password you need to remember. Choose something strong&mdash;at least 8 characters.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">4</div>
+                        <div class="guide-step-content">
+                            <h3>Start Adding Passwords</h3>
+                            <p>Press <kbd>Ctrl</kbd>+<kbd>N</kbd> or click the <strong>+</strong> button to add your first entry. You can generate strong passwords with the built-in generator (<kbd>Ctrl</kbd>+<kbd>G</kbd>).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Source Install -->
+            <div class="install-content" id="tab-source">
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="guide-step-number">1</div>
+                        <div class="guide-step-content">
+                            <h3>Clone the Repository</h3>
+                            <div class="code-block">
+                                <code>git clone https://github.com/nikokiru/soteria.git<br>cd soteria</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">2</div>
+                        <div class="guide-step-content">
+                            <h3>Install Dependencies</h3>
+                            <div class="code-block">
+                                <code>pip install -r requirements.txt</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">3</div>
+                        <div class="guide-step-content">
+                            <h3>Launch the App</h3>
+                            <div class="code-block">
+                                <code># GUI mode<br>python main.py --gui<br><br># CLI mode<br>python main.py init&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Create vault<br>python main.py add GitHub user # Add entry<br>python main.py list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# List all</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">4</div>
+                        <div class="guide-step-content">
+                            <h3>Optional: Build an Executable</h3>
+                            <div class="code-block">
+                                <code>pip install -r requirements-dev.txt<br>.\build.bat</code>
+                            </div>
+                            <p>Output: <code>dist\SoteriaApp\SoteriaApp.exe</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extension Install -->
+            <div class="install-content" id="tab-extension">
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="guide-step-number">1</div>
+                        <div class="guide-step-content">
+                            <h3>Ensure the Desktop App is Running</h3>
+                            <p>The browser extension communicates with the desktop app via localhost. Launch the GUI or headless service first.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">2</div>
+                        <div class="guide-step-content">
+                            <h3>Load the Extension</h3>
+                            <p>Open <code>chrome://extensions</code> (or <code>edge://extensions</code>), enable <strong>Developer mode</strong>, click <strong>Load unpacked</strong>, and select the <code>browser_extension/</code> folder from the repository.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">3</div>
+                        <div class="guide-step-content">
+                            <h3>Unlock and Search</h3>
+                            <p>Click the Soteria extension icon. If your vault is unlocked in the desktop app, you can search and autofill passwords directly from the browser.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-number">4</div>
+                        <div class="guide-step-content">
+                            <h3>Autofill on Login Pages</h3>
+                            <p>When you visit a login page, the extension automatically detects form fields and suggests matching credentials based on the domain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLI Reference -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>CLI Quick Reference</h2>
+                <p>Common commands for the command-line interface.</p>
+            </div>
+            <div class="cli-reference">
+                <div class="cli-group">
+                    <h3>Vault Management</h3>
+                    <div class="cli-command">
+                        <code>python main.py init</code>
+                        <span>Create a new vault</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py change-master</code>
+                        <span>Change master password</span>
+                    </div>
+                </div>
+                <div class="cli-group">
+                    <h3>Password Operations</h3>
+                    <div class="cli-command">
+                        <code>python main.py add &lt;service&gt; &lt;username&gt;</code>
+                        <span>Add a new entry</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py get &lt;service&gt; --clip</code>
+                        <span>Copy password to clipboard</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py list</code>
+                        <span>List all entries</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py search &lt;query&gt;</code>
+                        <span>Search entries</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py delete &lt;service&gt;</code>
+                        <span>Delete an entry</span>
+                    </div>
+                </div>
+                <div class="cli-group">
+                    <h3>Password Generation</h3>
+                    <div class="cli-command">
+                        <code>python main.py generate --length 24 --clip</code>
+                        <span>Generate and copy a 24-char password</span>
+                    </div>
+                    <div class="cli-command">
+                        <code>python main.py add GitHub user --generate --length 32</code>
+                        <span>Add entry with generated password</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="content-section content-section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Next Steps</h2>
+                <p>Make the most of Soteria.</p>
+            </div>
+            <div class="next-steps-grid">
+                <a href="security.html" class="next-step-card">
+                    <div class="next-step-icon">&#128274;</div>
+                    <h3>Security Details</h3>
+                    <p>Learn about the encryption, key derivation, and threat model behind Soteria.</p>
+                </a>
+                <a href="https://github.com/nikokiru/soteria" target="_blank" class="next-step-card">
+                    <div class="next-step-icon">&#128187;</div>
+                    <h3>Source Code</h3>
+                    <p>Browse the code, file issues, and contribute on GitHub.</p>
+                </a>
+                <a href="updates.html" class="next-step-card">
+                    <div class="next-step-icon">&#128240;</div>
+                    <h3>Updates</h3>
+                    <p>Stay up to date with the latest features and improvements.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                        <span>Soteria</span>
+                    </div>
+                    <p class="footer-tagline">A secure local password manager</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="getting-started.html">Get Started</a>
+                    <a href="security.html">Security</a>
+                    <a href="updates.html">Updates</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank">GitHub</a>
+                    <a href="https://github.com/nikokiru/soteria/issues" target="_blank">Report Bug</a>
+                    <a href="https://github.com/nikokiru/soteria/blob/main/LICENSE" target="_blank">License</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Soteria. Open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Install tabs
+        document.querySelectorAll('.install-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.install-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -178,13 +178,20 @@ python main.py --gui --minimized
 
 ```
 gh-pages/
-├── index.html      # Landing page
-├── updates.html    # Blog/updates feed
-├── style.css       # Shared styles
-├── sitemap.xml     # SEO sitemap
-├── robots.txt      # Crawler directives
-└── assets/         # Images
+├── index.html            # Landing page (hero, features, demo, security, FAQ)
+├── getting-started.html  # Download & install guide (tabbed: GUI / Source / Extension)
+├── security.html         # Security whitepaper (crypto, threat model, IPC)
+├── privacy.html          # Privacy policy (zero data collection)
+├── updates.html          # Blog/updates feed (newest first)
+├── style.css             # Shared styles for all pages
+├── sitemap.xml           # SEO sitemap (5 pages)
+├── robots.txt            # Crawler directives
+└── assets/               # Images (logo, screenshots)
 ```
+
+### Navigation (shared across all pages)
+
+Features | Get Started | Security | Updates | GitHub
 
 ### Adding Updates
 

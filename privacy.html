@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soteria Privacy Policy - Zero data collection, no telemetry, fully local.">
+    <title>Privacy Policy - Soteria Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy - Soteria Password Manager">
+    <meta property="og:description" content="Zero data collection, no telemetry, fully local.">
+    <meta property="og:image" content="assets/soteria.png">
+    <meta property="og:url" content="https://nikokiru.github.io/soteria/privacy.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Privacy Policy - Soteria Password Manager">
+    <meta name="twitter:description" content="Zero data collection, no telemetry, fully local.">
+    <meta name="twitter:image" content="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Soteria collects zero data. Here's the full picture.</p>
+        </div>
+    </header>
+
+    <!-- Privacy Content -->
+    <main class="content-section">
+        <div class="container">
+            <div class="whitepaper-section">
+                <p class="privacy-updated">Last updated: February 1, 2026</p>
+
+                <h2>The Short Version</h2>
+                <p>Soteria does not collect, transmit, or store any of your data. Your passwords exist only on your device, encrypted with keys only you control. There is no telemetry, no analytics, no tracking, and no network communication of any kind.</p>
+
+                <hr class="section-divider">
+
+                <h2>Desktop Application</h2>
+                <h3>Data Storage</h3>
+                <p>All data is stored locally in an encrypted vault file at <code>~/.soteria/vault.json</code>. This file never leaves your computer. Soteria does not upload, sync, or backup your vault to any server.</p>
+
+                <h3>Network Activity</h3>
+                <p>The desktop application makes <strong>zero outbound network connections</strong>. It does not check for updates, send crash reports, or contact any external servers. The only network activity is a localhost HTTP server (<code>127.0.0.1:8722</code>) used for browser extension communication, which is not accessible from outside your machine.</p>
+
+                <h3>Telemetry &amp; Analytics</h3>
+                <p>Soteria contains <strong>no telemetry, analytics, or tracking code</strong>. No usage data, crash reports, or feature metrics are collected.</p>
+
+                <h3>Settings</h3>
+                <p>Application settings (auto-lock timeout, clipboard clear timeout, hotkey preferences) are stored locally in <code>~/.soteria/settings.json</code>. These settings are never transmitted anywhere.</p>
+
+                <hr class="section-divider">
+
+                <h2>Browser Extension</h2>
+                <p>The browser extension communicates <strong>only with the local desktop application</strong> via <code>127.0.0.1:8722</code>. It does not contact any external servers.</p>
+                <ul>
+                    <li>Passwords are fetched on demand and never cached in the extension.</li>
+                    <li>No browsing history, form data, or page content is collected or stored.</li>
+                    <li>The extension only reads the current page's domain to match credentials.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2>This Website</h2>
+                <p>This website is hosted on <strong>GitHub Pages</strong>. GitHub may collect standard web server logs (IP addresses, browser type, pages visited) as part of their hosting service. Soteria has no control over or access to this data.</p>
+                <ul>
+                    <li>This site does not use cookies (beyond any set by GitHub Pages infrastructure).</li>
+                    <li>This site does not use third-party analytics (no Google Analytics, no tracking pixels).</li>
+                    <li>This site loads Google Fonts, which involves a request to Google's servers. This is the only third-party resource loaded.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2>Third-Party Dependencies</h2>
+                <p>Soteria's runtime dependencies are well-established open-source libraries that do not collect user data:</p>
+                <ul>
+                    <li><strong>cryptography</strong> &mdash; Encryption library (no network activity)</li>
+                    <li><strong>argon2-cffi</strong> &mdash; Key derivation (no network activity)</li>
+                    <li><strong>pyperclip</strong> &mdash; Clipboard access (no network activity)</li>
+                    <li><strong>keyboard</strong> &mdash; Global hotkey (no network activity)</li>
+                    <li><strong>pystray / Pillow</strong> &mdash; System tray (no network activity)</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2>Contact</h2>
+                <p>If you have questions about this privacy policy, please open an issue on <a href="https://github.com/nikokiru/soteria/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                        <span>Soteria</span>
+                    </div>
+                    <p class="footer-tagline">A secure local password manager</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="getting-started.html">Get Started</a>
+                    <a href="security.html">Security</a>
+                    <a href="updates.html">Updates</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank">GitHub</a>
+                    <a href="https://github.com/nikokiru/soteria/issues" target="_blank">Report Bug</a>
+                    <a href="https://github.com/nikokiru/soteria/blob/main/LICENSE" target="_blank">License</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Soteria. Open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

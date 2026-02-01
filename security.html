@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soteria Security Whitepaper - Detailed overview of the encryption, key derivation, and security model.">
+    <title>Security - Soteria Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Security - Soteria Password Manager">
+    <meta property="og:description" content="Detailed overview of Soteria's encryption, key derivation, and security model.">
+    <meta property="og:image" content="assets/soteria.png">
+    <meta property="og:url" content="https://nikokiru.github.io/soteria/security.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Security - Soteria Password Manager">
+    <meta name="twitter:description" content="Detailed overview of Soteria's encryption, key derivation, and security model.">
+    <meta name="twitter:image" content="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="security.html" class="nav-active">Security</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Security Whitepaper</h1>
+            <p>How Soteria protects your passwords, from encryption primitives to runtime defenses.</p>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <section class="content-section">
+        <div class="container">
+            <div class="toc">
+                <h3>Contents</h3>
+                <ol>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#key-derivation">Key Derivation (Argon2id)</a></li>
+                    <li><a href="#encryption">Encryption (AES-256-GCM)</a></li>
+                    <li><a href="#vault-format">Vault File Format</a></li>
+                    <li><a href="#runtime">Runtime Protections</a></li>
+                    <li><a href="#threat-model">Threat Model</a></li>
+                    <li><a href="#ipc-security">IPC &amp; Extension Security</a></li>
+                    <li><a href="#transparency">Open Source Transparency</a></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="content-section content-section-alt">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Overview</h2>
+                <p>Soteria is a local-first password manager. Your vault file never leaves your device and is never transmitted over a network. All encryption and decryption happens client-side, on your machine.</p>
+                <p>The security model is built on two foundations:</p>
+                <ul>
+                    <li><strong>Argon2id</strong> for key derivation &mdash; converts your master password into a 256-bit encryption key, resistant to GPU and ASIC attacks.</li>
+                    <li><strong>AES-256-GCM</strong> for authenticated encryption &mdash; encrypts your vault and verifies data integrity in a single operation.</li>
+                </ul>
+                <p>There is no "forgot password" feature. If you lose your master password, your vault cannot be recovered by anyone, including the developers. This is by design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Derivation -->
+    <section id="key-derivation" class="content-section">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Key Derivation: Argon2id</h2>
+                <p><a href="https://en.wikipedia.org/wiki/Argon2" target="_blank" rel="noopener">Argon2</a> won the 2015 Password Hashing Competition and is the recommended algorithm by OWASP for password storage. Soteria uses the <strong>Argon2id</strong> variant, which combines resistance to both side-channel attacks (Argon2i) and GPU/ASIC attacks (Argon2d).</p>
+
+                <div class="spec-table-wrapper">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Time cost</td>
+                                <td>4 iterations</td>
+                                <td>Higher iteration count increases attacker cost linearly</td>
+                            </tr>
+                            <tr>
+                                <td>Memory cost</td>
+                                <td>128 MB (131,072 KiB)</td>
+                                <td>Forces attackers to dedicate significant memory per guess, defeating parallel GPU attacks</td>
+                            </tr>
+                            <tr>
+                                <td>Parallelism</td>
+                                <td>4 threads</td>
+                                <td>Utilizes multi-core CPUs for faster legitimate derivation</td>
+                            </tr>
+                            <tr>
+                                <td>Output length</td>
+                                <td>32 bytes (256 bits)</td>
+                                <td>Matches AES-256 key size exactly</td>
+                            </tr>
+                            <tr>
+                                <td>Salt</td>
+                                <td>16 random bytes</td>
+                                <td>Unique per vault, regenerated on master password change</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>With 128 MB of required memory per hash attempt, a brute-force attack on a reasonable master password is computationally infeasible. An attacker with 8 GB of GPU memory could only run ~62 parallel guesses, compared to millions with simpler algorithms like PBKDF2.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encryption -->
+    <section id="encryption" class="content-section content-section-alt">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Encryption: AES-256-GCM</h2>
+                <p>AES-256-GCM (Galois/Counter Mode) provides both <strong>confidentiality</strong> and <strong>integrity</strong> in a single operation. It is the same cipher suite used by TLS 1.3, government classified systems, and major cloud providers.</p>
+
+                <div class="spec-table-wrapper">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Algorithm</td>
+                                <td>AES-256-GCM (authenticated encryption)</td>
+                            </tr>
+                            <tr>
+                                <td>Key size</td>
+                                <td>256 bits (from Argon2id)</td>
+                            </tr>
+                            <tr>
+                                <td>Nonce</td>
+                                <td>12 bytes (96 bits), unique per encryption</td>
+                            </tr>
+                            <tr>
+                                <td>Authentication</td>
+                                <td>GCM tag (128 bits) &mdash; verifies data was not tampered with</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>How It Works</h3>
+                <div class="flow-diagram">
+                    <div class="flow-row">
+                        <div class="flow-box">Master Password</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box flow-box-accent">Argon2id + Salt</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box">256-bit Key</div>
+                    </div>
+                    <div class="flow-row">
+                        <div class="flow-box">Entries (JSON)</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box flow-box-accent">AES-256-GCM + Nonce</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box">Encrypted Vault</div>
+                    </div>
+                </div>
+
+                <p>When you enter a wrong master password, Argon2id derives a different key, and AES-GCM's authentication tag will fail to verify. This produces an <code>InvalidTag</code> error &mdash; no separate password hash is stored or needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vault Format -->
+    <section id="vault-format" class="content-section">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Vault File Format</h2>
+                <p>Your encrypted vault is stored at <code>~/.soteria/vault.json</code>. The file contains three fields, all Base64-encoded:</p>
+                <div class="code-block">
+                    <code>{<br>&nbsp;&nbsp;"salt": "&lt;base64 16 bytes&gt;",<br>&nbsp;&nbsp;"nonce": "&lt;base64 12 bytes&gt;",<br>&nbsp;&nbsp;"data": "&lt;base64 encrypted entries JSON&gt;"<br>}</code>
+                </div>
+                <ul>
+                    <li><strong>salt</strong> &mdash; Random per-vault salt used for key derivation. Regenerated when master password changes.</li>
+                    <li><strong>nonce</strong> &mdash; Random per-encryption nonce for AES-GCM. A new nonce is generated every time the vault is saved.</li>
+                    <li><strong>data</strong> &mdash; The encrypted payload containing all password entries as a JSON array.</li>
+                </ul>
+                <p>File permissions are set to <code>0600</code> on Unix systems (owner read/write only). The vault directory (<code>~/.soteria/</code>) is set to <code>0700</code>.</p>
+                <p>Writes are atomic: data is written to a temporary file first, then renamed to <code>vault.json</code>. This prevents corruption if the process crashes mid-write.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Runtime Protections -->
+    <section id="runtime" class="content-section content-section-alt">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Runtime Protections</h2>
+                <p>Beyond encryption at rest, Soteria enforces several runtime defenses:</p>
+
+                <div class="protection-grid">
+                    <div class="protection-card">
+                        <h3>Mandatory Auto-Lock</h3>
+                        <p>The vault automatically locks after 1&ndash;30 minutes of inactivity (configurable, default 5 minutes). The "Never" option has been removed &mdash; auto-lock cannot be disabled.</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>Secure Clipboard Clear</h3>
+                        <p>After copying a password, the clipboard is automatically cleared within 15 seconds to 2 minutes (configurable, default 30 seconds). The clipboard is overwritten with random data before clearing to prevent forensic recovery.</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>Rate Limiting</h3>
+                        <p>After 5 consecutive failed unlock attempts, exponential backoff is applied. This makes online brute-force attacks impractical without restarting the application.</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>Password Field Auto-Hide</h3>
+                        <p>When a password is revealed in the GUI, it automatically hides again after 10 seconds to prevent shoulder surfing.</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>File Permissions</h3>
+                        <p>On Unix systems, the vault file is restricted to <code>0600</code> (owner-only read/write) and the directory to <code>0700</code>.</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>Memory Handling</h3>
+                        <p>The encryption key and decrypted entries are held in memory only while the vault is unlocked. Locking the vault clears all sensitive data from memory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Threat Model -->
+    <section id="threat-model" class="content-section">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Threat Model</h2>
+                <p>Understanding what Soteria protects against &mdash; and what it doesn't &mdash; is important for making informed security decisions.</p>
+
+                <h3>What Soteria Protects Against</h3>
+                <div class="threat-list">
+                    <div class="threat-item threat-protected">
+                        <span class="threat-icon">&#10003;</span>
+                        <div>
+                            <strong>Vault file theft</strong>
+                            <p>Even if an attacker copies your <code>vault.json</code>, the contents are encrypted with AES-256-GCM and cannot be read without your master password.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-protected">
+                        <span class="threat-icon">&#10003;</span>
+                        <div>
+                            <strong>Brute-force attacks on master password</strong>
+                            <p>Argon2id with 128 MB memory cost makes large-scale password guessing infeasible, even with specialized hardware.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-protected">
+                        <span class="threat-icon">&#10003;</span>
+                        <div>
+                            <strong>Vault tampering</strong>
+                            <p>GCM's authentication tag detects any modification to the encrypted data. Tampered vaults will fail to decrypt.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-protected">
+                        <span class="threat-icon">&#10003;</span>
+                        <div>
+                            <strong>Clipboard snooping</strong>
+                            <p>Passwords are cleared from the clipboard automatically and overwritten with random data.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-protected">
+                        <span class="threat-icon">&#10003;</span>
+                        <div>
+                            <strong>Cloud/server breaches</strong>
+                            <p>Your data never leaves your machine. There is no server to breach.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>What Soteria Does NOT Protect Against</h3>
+                <div class="threat-list">
+                    <div class="threat-item threat-unprotected">
+                        <span class="threat-icon">&#10007;</span>
+                        <div>
+                            <strong>Compromised operating system</strong>
+                            <p>If an attacker has root/admin access to your machine, they can intercept your master password via keyloggers or read memory directly.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-unprotected">
+                        <span class="threat-icon">&#10007;</span>
+                        <div>
+                            <strong>Weak master password</strong>
+                            <p>Argon2id slows down guessing, but a weak password (e.g., "password123") can still be cracked. Use a strong, unique master password.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-unprotected">
+                        <span class="threat-icon">&#10007;</span>
+                        <div>
+                            <strong>Physical access while unlocked</strong>
+                            <p>If someone has physical access to your computer while the vault is unlocked, they can view your passwords. Auto-lock mitigates this but cannot prevent it entirely.</p>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-unprotected">
+                        <span class="threat-icon">&#10007;</span>
+                        <div>
+                            <strong>Lost master password</strong>
+                            <p>There is no recovery mechanism. If you forget your master password, your vault is permanently inaccessible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IPC Security -->
+    <section id="ipc-security" class="content-section content-section-alt">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>IPC &amp; Extension Security</h2>
+                <p>The browser extension communicates with the desktop app via a local HTTP API. This connection is secured by several constraints:</p>
+                <ul>
+                    <li><strong>Localhost only</strong> &mdash; The IPC server binds exclusively to <code>127.0.0.1:8722</code>. It cannot be reached from other devices on the network.</li>
+                    <li><strong>CORS validation</strong> &mdash; Only requests from the browser extension origin are accepted.</li>
+                    <li><strong>No unlock via extension</strong> &mdash; The extension can search and read entries when the vault is already unlocked, but it cannot unlock the vault. Unlocking requires the desktop app.</li>
+                    <li><strong>No password caching</strong> &mdash; Passwords are fetched on demand and never stored in the extension's memory or local storage.</li>
+                    <li><strong>Read-only by default</strong> &mdash; The extension has limited write access (adding entries only). It cannot delete or modify existing entries.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section id="transparency" class="content-section">
+        <div class="container">
+            <div class="whitepaper-section">
+                <h2>Open Source Transparency</h2>
+                <p>Soteria's entire source code is publicly available on <a href="https://github.com/nikokiru/soteria" target="_blank" rel="noopener">GitHub</a>. You can read, audit, and verify every line of the cryptographic implementation.</p>
+                <p>Key files to inspect:</p>
+                <ul>
+                    <li><a href="https://github.com/nikokiru/soteria/blob/main/soteria/crypto.py" target="_blank" rel="noopener"><code>soteria/crypto.py</code></a> &mdash; All encryption, decryption, and key derivation</li>
+                    <li><a href="https://github.com/nikokiru/soteria/blob/main/soteria/vault.py" target="_blank" rel="noopener"><code>soteria/vault.py</code></a> &mdash; Vault operations and entry management</li>
+                    <li><a href="https://github.com/nikokiru/soteria/blob/main/soteria/storage.py" target="_blank" rel="noopener"><code>soteria/storage.py</code></a> &mdash; File I/O and atomic writes</li>
+                </ul>
+                <p>Soteria uses well-established, audited libraries for its cryptographic operations: <a href="https://cryptography.io/" target="_blank" rel="noopener">cryptography</a> (maintained by the Python Cryptographic Authority) for AES-256-GCM, and <a href="https://argon2-cffi.readthedocs.io/" target="_blank" rel="noopener">argon2-cffi</a> for Argon2id.</p>
+                <p>Security issues can be reported via <a href="https://github.com/nikokiru/soteria/issues" target="_blank" rel="noopener">GitHub Issues</a>. For sensitive disclosures, please use a private channel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-section">
+                    <div class="footer-brand">
+                        <img src="assets/soteria.png" alt="Soteria" class="footer-logo">
+                        <span>Soteria</span>
+                    </div>
+                    <p class="footer-tagline">A secure local password manager</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="getting-started.html">Get Started</a>
+                    <a href="security.html">Security</a>
+                    <a href="updates.html">Updates</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/nikokiru/soteria" target="_blank">GitHub</a>
+                    <a href="https://github.com/nikokiru/soteria/issues" target="_blank">Report Bug</a>
+                    <a href="https://github.com/nikokiru/soteria/blob/main/LICENSE" target="_blank">License</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Soteria. Open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
