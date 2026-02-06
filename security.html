@@ -233,11 +233,11 @@
                     </div>
                     <div class="protection-card">
                         <h3>Secure Clipboard Clear</h3>
-                        <p>After copying a password, the clipboard is automatically cleared within 15 seconds to 2 minutes (configurable, default 30 seconds). The clipboard is overwritten with random data before clearing to prevent forensic recovery.</p>
+                        <p>After copying a password, the clipboard is automatically cleared within 15 seconds to 2 minutes (configurable). On Windows, the native API is used to exclude sensitive data from clipboard history. Content is overwritten with random data before clearing.</p>
                     </div>
                     <div class="protection-card">
-                        <h3>Rate Limiting</h3>
-                        <p>After 5 consecutive failed unlock attempts, exponential backoff is applied. This makes online brute-force attacks impractical without restarting the application.</p>
+                        <h3>Persistent Rate Limiting</h3>
+                        <p>After 5 consecutive failed unlock attempts, exponential backoff is applied (5s, 10s, 20s... up to 5 minutes). Rate limit state persists across app restarts to prevent bypass attempts.</p>
                     </div>
                     <div class="protection-card">
                         <h3>Password Field Auto-Hide</h3>
@@ -249,7 +249,11 @@
                     </div>
                     <div class="protection-card">
                         <h3>Memory Handling</h3>
-                        <p>The encryption key and decrypted entries are held in memory only while the vault is unlocked. Locking the vault clears all sensitive data from memory.</p>
+                        <p>The encryption key and decrypted entries are held in memory only while the vault is unlocked. Locking the vault clears all sensitive data and attempts to zero key material in memory (best-effort in Python).</p>
+                    </div>
+                    <div class="protection-card">
+                        <h3>Password Strength Validation</h3>
+                        <p>Master passwords are validated for strength during vault creation. Checks include minimum length (8 chars), character diversity (upper, lower, digits, symbols), and detection of common passwords.</p>
                     </div>
                 </div>
             </div>
@@ -345,9 +349,12 @@
                 <p>The browser extension communicates with the desktop app via a local HTTP API. This connection is secured by several constraints:</p>
                 <ul>
                     <li><strong>Localhost only</strong> &mdash; The IPC server binds exclusively to <code>127.0.0.1:8722</code>. It cannot be reached from other devices on the network.</li>
-                    <li><strong>CORS validation</strong> &mdash; Only requests from the browser extension origin are accepted.</li>
+                    <li><strong>Strict CORS validation</strong> &mdash; Only requests from verified browser extension origins are accepted. Unknown origins are rejected (no development fallbacks in production).</li>
+                    <li><strong>Concurrent request handling</strong> &mdash; Uses ThreadingHTTPServer to prevent extension requests from blocking during vault operations.</li>
+                    <li><strong>Encrypted pending credentials</strong> &mdash; Captured credentials in the extension are encrypted with a per-session AES-256-GCM key before storage.</li>
+                    <li><strong>Auto-clear pending</strong> &mdash; Pending credentials in the extension are automatically cleared after 5 minutes.</li>
+                    <li><strong>Activity-based polling</strong> &mdash; Extension polls server every 5 seconds when active, every 30 seconds when idle, to reduce resource usage.</li>
                     <li><strong>No unlock via extension</strong> &mdash; The extension can search and read entries when the vault is already unlocked, but it cannot unlock the vault. Unlocking requires the desktop app.</li>
-                    <li><strong>No password caching</strong> &mdash; Passwords are fetched on demand and never stored in the extension's memory or local storage.</li>
                     <li><strong>Read-only by default</strong> &mdash; The extension has limited write access (adding entries only). It cannot delete or modify existing entries.</li>
                 </ul>
             </div>
