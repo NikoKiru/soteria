@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -51,12 +51,21 @@
     <header class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Your Passwords.<br><span class="highlight typing-text" id="typing-text">Your Machine.</span></h1>
-                <p class="hero-subtitle">Soteria is a secure, local-first password manager that keeps your credentials encrypted on your own device. No cloud. No subscriptions. Just security.</p>
+                <h1>Your Passwords.<br><span class="highlight typing-text" id="typing-text">Your Rules.</span></h1>
+                <p class="hero-subtitle">Military-grade encryption meets zero-cloud simplicity. Soteria keeps your passwords AES-256 encrypted on your device &mdash; no servers, no subscriptions, no compromises.</p>
                 <div class="hero-badges">
-                    <span class="badge">🔐 AES-256 Encryption</span>
-                    <span class="badge">🖥️ GUI & CLI</span>
-                    <span class="badge">🌐 Browser Extension</span>
+                    <span class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        AES-256 Encryption
+                    </span>
+                    <span class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        GUI & CLI
+                    </span>
+                    <span class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        Browser Extension
+                    </span>
                 </div>
                 <div class="hero-cta">
                     <a href="getting-started.html" class="btn btn-primary btn-large">Get Started</a>
@@ -73,67 +82,77 @@
                     </div>
                     <div class="mockup-body">
                         <div class="mockup-search">
-                            <span class="search-icon">🔍</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                             <span>Search passwords...</span>
                         </div>
                         <div class="mockup-entry">
-                            <span class="entry-icon">🌐</span>
+                            <span class="entry-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            </span>
                             <div class="entry-info">
                                 <span class="entry-name">GitHub</span>
                                 <span class="entry-user">user@example.com</span>
                             </div>
-                            <span class="entry-copy">📋</span>
+                            <span class="entry-copy">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            </span>
                         </div>
                         <div class="mockup-entry">
-                            <span class="entry-icon">📧</span>
+                            <span class="entry-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
                             <div class="entry-info">
                                 <span class="entry-name">Email Account</span>
                                 <span class="entry-user">john.doe@email.com</span>
                             </div>
-                            <span class="entry-copy">📋</span>
+                            <span class="entry-copy">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            </span>
                         </div>
                         <div class="mockup-entry">
-                            <span class="entry-icon">🏦</span>
+                            <span class="entry-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </span>
                             <div class="entry-info">
                                 <span class="entry-name">Banking Portal</span>
                                 <span class="entry-user">johndoe123</span>
                             </div>
-                            <span class="entry-copy">📋</span>
+                            <span class="entry-copy">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-bg"></div>
-    </header>
-
-    <!-- Trust Badges -->
-    <section class="trust-bar">
-        <div class="container">
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <span class="trust-icon">&#128274;</span>
-                    <span class="trust-text">AES-256-GCM + Argon2id</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">&#127968;</span>
-                    <span class="trust-text">100% Local Storage</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">&#128065;&#65039;</span>
-                    <span class="trust-text">Open Source</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">&#128683;</span>
-                    <span class="trust-text">Zero Data Collection</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">&#9889;</span>
-                    <span class="trust-text">Free Forever</span>
+        <!-- Trust Strip -->
+        <div class="trust-strip">
+            <div class="container">
+                <div class="trust-items">
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>AES-256-GCM + Argon2id</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>100% Local Storage</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                        <span>Zero Data Collection</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span>Free Forever</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
@@ -144,37 +163,40 @@
             </div>
             <div class="steps-container">
                 <div class="step" data-step="1">
-                    <div class="step-icon">🔐</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
                     <div class="step-content">
                         <h3>Create Your Vault</h3>
-                        <p>Set up a master password to create your encrypted vault. This is the only password you'll ever need to remember.</p>
+                        <p>Choose a master password. Soteria encrypts your vault with AES-256-GCM &mdash; no other setup required.</p>
                     </div>
                 </div>
                 <div class="step-connector">
                     <div class="connector-line"></div>
-                    <div class="connector-arrow">→</div>
+                    <div class="connector-arrow">&rarr;</div>
                 </div>
                 <div class="step" data-step="2">
-                    <div class="step-icon">➕</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </div>
                     <div class="step-content">
-                        <h3>Add Your Entries</h3>
-                        <p>Store your passwords, generate strong new ones, and organize them by service. Add URLs and notes for easy reference.</p>
+                        <h3>Store Your Passwords</h3>
+                        <p>Add credentials manually or generate strong passwords instantly. Organize by service with URLs and notes.</p>
                     </div>
                 </div>
                 <div class="step-connector">
                     <div class="connector-line"></div>
-                    <div class="connector-arrow">→</div>
+                    <div class="connector-arrow">&rarr;</div>
                 </div>
                 <div class="step" data-step="3">
-                    <div class="step-icon">🚀</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
                     <div class="step-content">
-                        <h3>Access Anywhere</h3>
-                        <p>Use the desktop app, CLI, or browser extension. Your vault stays local while you get seamless access.</p>
+                        <h3>Access Everywhere</h3>
+                        <p>Use the desktop app, command line, or browser extension. Your vault stays local while you get seamless access.</p>
                     </div>
                 </div>
-            </div>
-            <div class="steps-cta">
-                <a href="getting-started.html" class="btn btn-primary btn-large">View Full Setup Guide &rarr;</a>
             </div>
         </div>
     </section>
@@ -183,50 +205,202 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Powerful Features</h2>
-                <p>Everything you need to manage your passwords securely and efficiently.</p>
+                <h2>Everything You Need</h2>
+                <p>Powerful security features without the complexity.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
                     <h3>Local Encrypted Vault</h3>
-                    <p>Your passwords are stored in an encrypted vault on your machine. They never leave your device or get uploaded to any server.</p>
+                    <p>AES-256-GCM encrypted vault stored entirely on your machine &mdash; your data never touches a server.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🖥️</div>
-                    <h3>Dual Interface</h3>
-                    <p>Choose between a modern graphical interface or a powerful command-line tool. Use whichever fits your workflow.</p>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Desktop App & CLI</h3>
+                    <p>Modern GUI for everyday use, powerful command line for automation and scripting.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
                     <h3>Browser Extension</h3>
-                    <p>Seamlessly autofill login forms in Chrome, Edge, and Brave. Get domain-matched suggestions with a click.</p>
+                    <p>One-click autofill for Chrome, Edge, and Brave with domain-matched credential suggestions.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
                     <h3>Instant Search</h3>
-                    <p>Fast indexed lookups find your credentials instantly, no matter how large your vault grows.</p>
+                    <p>Indexed lookups find credentials instantly across your entire vault.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    </div>
                     <h3>Smart Clipboard</h3>
-                    <p>Copy passwords with automatic clipboard clearing. Your sensitive data doesn't linger in memory.</p>
+                    <p>Passwords auto-clear from clipboard after a configurable timeout, excluded from clipboard history.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⌨️</div>
-                    <h3>Global Hotkey</h3>
-                    <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> anywhere to instantly show or hide Soteria.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>System Tray</h3>
-                    <p>Minimize to the system tray for quick access. Option to start minimized on system boot.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎲</div>
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
                     <h3>Password Generator</h3>
-                    <p>Generate strong, random passwords with configurable length and character sets.</p>
+                    <p>Cryptographically random passwords with configurable length, character sets, and ambiguity exclusion.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase (Tabbed Screenshots) -->
+    <section id="showcase" class="showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It in Action</h2>
+                <p>Multiple interfaces to fit your workflow.</p>
+            </div>
+            <div class="showcase-tabs">
+                <button class="showcase-tab active" data-target="showcase-gui">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Desktop App
+                </button>
+                <button class="showcase-tab" data-target="showcase-cli">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    Command Line
+                </button>
+                <button class="showcase-tab" data-target="showcase-ext">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Browser Extension
+                </button>
+            </div>
+            <div class="showcase-display">
+                <div class="showcase-panel active" id="showcase-gui">
+                    <div class="showcase-placeholder">
+                        <div class="placeholder-content">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <span class="placeholder-hint">Desktop Application</span>
+                        </div>
+                    </div>
+                    <img src="assets/screenshot-gui.svg" alt="Soteria Desktop Application" class="showcase-img">
+                </div>
+                <div class="showcase-panel" id="showcase-cli">
+                    <div class="showcase-placeholder">
+                        <div class="placeholder-content">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            <span class="placeholder-hint">Command Line Interface</span>
+                        </div>
+                    </div>
+                    <img src="assets/screenshot-cli.svg" alt="Soteria CLI" class="showcase-img">
+                </div>
+                <div class="showcase-panel" id="showcase-ext">
+                    <div class="showcase-placeholder">
+                        <div class="placeholder-content">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span class="placeholder-hint">Browser Extension</span>
+                        </div>
+                    </div>
+                    <img src="assets/screenshot-extension.svg" alt="Soteria Browser Extension" class="showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security + Why Local Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built on Proven Cryptography</h2>
+                <p>Every design decision prioritizes your security. No shortcuts, no compromises.</p>
+            </div>
+            <div class="security-highlights">
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="security-content">
+                        <h3>AES-256-GCM + Argon2id</h3>
+                        <p>Authenticated encryption with the winning password hashing algorithm from the Password Hashing Competition. 128 MB memory cost makes brute-force attacks economically infeasible.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="security-content">
+                        <h3>100% Local Architecture</h3>
+                        <p>Your vault never leaves your machine. No servers means no server breaches, no data mining, no third-party trust required.</p>
+                    </div>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="security-content">
+                        <h3>Fully Open Source</h3>
+                        <p>Every line of cryptographic code is auditable. Verify the security claims yourself &mdash; no trust required.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Local Comparison -->
+            <div class="comparison-cards">
+                <div class="comparison-card comparison-card--competitor">
+                    <h3 class="comparison-title">Cloud Managers</h3>
+                    <ul class="comparison-list">
+                        <li class="compare-neutral">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            Data stored on their servers
+                        </li>
+                        <li class="compare-neutral">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            $3&ndash;5/month subscription
+                        </li>
+                        <li class="compare-neutral">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            Requires internet for sync
+                        </li>
+                        <li class="compare-neutral">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            Vulnerable to server breaches
+                        </li>
+                        <li class="compare-neutral">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            Must trust a third party
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison-card comparison-card--soteria">
+                    <h3 class="comparison-title">Soteria</h3>
+                    <ul class="comparison-list">
+                        <li class="compare-good">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Data stays on your machine
+                        </li>
+                        <li class="compare-good">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Free forever, open source
+                        </li>
+                        <li class="compare-good">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Works completely offline
+                        </li>
+                        <li class="compare-good">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            No servers to breach
+                        </li>
+                        <li class="compare-good">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Fully auditable code
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="security-cta">
+                <a href="security.html" class="btn btn-outline btn-large security-whitepaper-btn">Read the Security Whitepaper &rarr;</a>
             </div>
         </div>
     </section>
@@ -244,10 +418,14 @@
                         <input type="text" id="generated-password" readonly value="Click Generate to Start">
                         <div class="password-actions">
                             <button class="btn-icon" id="copy-password" title="Copy to clipboard">
-                                <span class="copy-icon">📋</span>
+                                <span class="copy-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                </span>
                                 <span class="copy-feedback">Copied!</span>
                             </button>
-                            <button class="btn-icon" id="regenerate-password" title="Generate new password">🔄</button>
+                            <button class="btn-icon" id="regenerate-password" title="Generate new password">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                            </button>
                         </div>
                     </div>
                     <div class="strength-indicator">
@@ -293,227 +471,11 @@
         </div>
     </section>
 
-    <!-- Screenshot Gallery -->
-    <section id="screenshots" class="screenshots">
-        <div class="container">
-            <div class="section-header">
-                <h2>See It in Action</h2>
-                <p>Multiple interfaces to fit your workflow.</p>
-            </div>
-            <div class="screenshot-gallery">
-                <div class="screenshot-card" data-screenshot="gui">
-                    <div class="screenshot-placeholder">
-                        <div class="placeholder-content">
-                            <span class="placeholder-icon">🖥️</span>
-                            <span class="placeholder-filename">screenshot-gui.svg</span>
-                            <span class="placeholder-hint">Desktop Application</span>
-                        </div>
-                    </div>
-                    <img src="assets/screenshot-gui.svg" alt="Soteria Desktop Application" class="screenshot-img">
-                    <h3>Desktop App</h3>
-                    <p>Modern GUI with all features at your fingertips</p>
-                </div>
-                <div class="screenshot-card" data-screenshot="cli">
-                    <div class="screenshot-placeholder">
-                        <div class="placeholder-content">
-                            <span class="placeholder-icon">⌨️</span>
-                            <span class="placeholder-filename">screenshot-cli.svg</span>
-                            <span class="placeholder-hint">Command Line Interface</span>
-                        </div>
-                    </div>
-                    <img src="assets/screenshot-cli.svg" alt="Soteria CLI" class="screenshot-img">
-                    <h3>Command Line</h3>
-                    <p>Powerful CLI for automation and scripting</p>
-                </div>
-                <div class="screenshot-card" data-screenshot="extension">
-                    <div class="screenshot-placeholder">
-                        <div class="placeholder-content">
-                            <span class="placeholder-icon">🌐</span>
-                            <span class="placeholder-filename">screenshot-extension.svg</span>
-                            <span class="placeholder-hint">Browser Extension</span>
-                        </div>
-                    </div>
-                    <img src="assets/screenshot-extension.svg" alt="Soteria Browser Extension" class="screenshot-img">
-                    <h3>Browser Extension</h3>
-                    <p>Seamless autofill in Chrome, Edge, and Brave</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Security Section -->
-    <section id="security" class="security">
-        <div class="container">
-            <div class="section-header">
-                <h2>Security First</h2>
-                <p>Built from the ground up with security as the top priority.</p>
-            </div>
-            <div class="security-highlights">
-                <div class="security-item">
-                    <div class="security-icon">🛡️</div>
-                    <div class="security-content">
-                        <h3>AES-256-GCM + Argon2id</h3>
-                        <p>Authenticated encryption with the winning password hashing algorithm. Resistant to brute-force, GPU, and side-channel attacks.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">🏠</div>
-                    <div class="security-content">
-                        <h3>100% Local</h3>
-                        <p>Your vault never leaves your machine. No servers, no sync, no attack surface beyond your own device.</p>
-                    </div>
-                </div>
-                <div class="security-item">
-                    <div class="security-icon">👁️</div>
-                    <div class="security-content">
-                        <h3>Open Source</h3>
-                        <p>Every line of code is auditable. Verify the security claims yourself—no trust required.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="security-cta">
-                <a href="security.html" class="btn btn-outline btn-large security-whitepaper-btn">Read the Security Whitepaper &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Local Comparison Section -->
-    <section id="why-local" class="comparison">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Local?</h2>
-                <p>See how Soteria compares to cloud-based password managers.</p>
-            </div>
-            <div class="comparison-table-wrapper">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Cloud Managers</th>
-                            <th class="soteria-col">Soteria</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Data Location</td>
-                            <td><span class="compare-neutral">Their servers</span></td>
-                            <td class="soteria-col"><span class="compare-good">Your machine ✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Cost</td>
-                            <td><span class="compare-bad">$3-5/month</span></td>
-                            <td class="soteria-col"><span class="compare-good">Free forever ✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Internet Required</td>
-                            <td><span class="compare-bad">Yes, for sync</span></td>
-                            <td class="soteria-col"><span class="compare-good">No ✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Server Breaches</td>
-                            <td><span class="compare-bad">Risk exists</span></td>
-                            <td class="soteria-col"><span class="compare-good">Impossible ✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Trust Third Party</td>
-                            <td><span class="compare-neutral">Required</span></td>
-                            <td class="soteria-col"><span class="compare-good">No ✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Open Source</td>
-                            <td><span class="compare-neutral">Some are</span></td>
-                            <td class="soteria-col"><span class="compare-good">Fully ✓</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Section -->
-    <section id="tech" class="technology">
-        <div class="container">
-            <div class="section-header">
-                <h2>Built With Modern Tech</h2>
-                <p>A robust technology stack you can trust.</p>
-            </div>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <span class="tech-name">Python 3</span>
-                    <span class="tech-desc">Core Language</span>
-                </div>
-                <div class="tech-item">
-                    <span class="tech-name">Tkinter</span>
-                    <span class="tech-desc">GUI Framework</span>
-                </div>
-                <div class="tech-item">
-                    <span class="tech-name">cryptography</span>
-                    <span class="tech-desc">AES-256-GCM</span>
-                </div>
-                <div class="tech-item">
-                    <span class="tech-name">argon2-cffi</span>
-                    <span class="tech-desc">Key Derivation</span>
-                </div>
-                <div class="tech-item">
-                    <span class="tech-name">Manifest V3</span>
-                    <span class="tech-desc">Browser Extension</span>
-                </div>
-                <div class="tech-item">
-                    <span class="tech-name">PyInstaller</span>
-                    <span class="tech-desc">Packaging</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Keyboard Shortcuts Section -->
-    <section class="shortcuts">
-        <div class="container">
-            <div class="section-header">
-                <h2>Keyboard Shortcuts</h2>
-                <p>Work faster with intuitive hotkeys.</p>
-            </div>
-            <div class="shortcuts-grid">
-                <div class="shortcut-item">
-                    <div class="shortcut-keys">
-                        <kbd>Ctrl</kbd><span>+</span><kbd>N</kbd>
-                    </div>
-                    <span class="shortcut-action">New Entry</span>
-                </div>
-                <div class="shortcut-item">
-                    <div class="shortcut-keys">
-                        <kbd>Ctrl</kbd><span>+</span><kbd>F</kbd>
-                    </div>
-                    <span class="shortcut-action">Search</span>
-                </div>
-                <div class="shortcut-item">
-                    <div class="shortcut-keys">
-                        <kbd>Ctrl</kbd><span>+</span><kbd>L</kbd>
-                    </div>
-                    <span class="shortcut-action">Lock Vault</span>
-                </div>
-                <div class="shortcut-item">
-                    <div class="shortcut-keys">
-                        <kbd>Ctrl</kbd><span>+</span><kbd>G</kbd>
-                    </div>
-                    <span class="shortcut-action">Password Generator</span>
-                </div>
-                <div class="shortcut-item">
-                    <div class="shortcut-keys">
-                        <kbd>Ctrl</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd>P</kbd>
-                    </div>
-                    <span class="shortcut-action">Show/Hide (Global)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about Soteria.</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
@@ -522,7 +484,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Your data is protected by <strong>AES-256-GCM encryption</strong>, the same standard used by governments and banks. Your master password is processed through <strong>Argon2id</strong>, the winner of the Password Hashing Competition, using 128MB of memory to resist brute-force attacks. The encrypted vault file is unreadable without your master password—even to Soteria.</p>
+                        <p>Your data is protected by <strong>AES-256-GCM encryption</strong>, the same standard used by governments and banks. Your master password is processed through <strong>Argon2id</strong>, the winner of the Password Hashing Competition, using 128MB of memory to resist brute-force attacks. The encrypted vault file is unreadable without your master password &mdash; even to Soteria.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -531,7 +493,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>There is <strong>no recovery option</strong>—this is intentional. Without your master password, your vault cannot be decrypted by anyone, including us. This is the cornerstone of Soteria's security model: true encryption means true privacy. We recommend storing your master password in a secure physical location as a backup.</p>
+                        <p>There is <strong>no recovery option</strong> &mdash; this is intentional. Without your master password, your vault cannot be decrypted by anyone, including us. This is the cornerstone of Soteria's security model: true encryption means true privacy. We recommend storing your master password in a secure physical location as a backup.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -552,47 +514,6 @@
                         <p><strong>Yes, completely free.</strong> Soteria is a personal project released as open source. There are no premium tiers, no subscriptions, no hidden costs. The source code is available on GitHub for anyone to inspect, modify, or contribute to.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What platforms are supported?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Soteria officially supports <strong>Windows</strong> with a native executable. Since it's built with Python, it can also run on <strong>macOS</strong> and <strong>Linux</strong> by running from source. The browser extension works with <strong>Chrome, Edge, and Brave</strong>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section id="use-cases" class="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <h2>Perfect For</h2>
-                <p>Whether you're privacy-conscious or security-focused, Soteria fits your needs.</p>
-            </div>
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <div class="use-case-icon">&#128187;</div>
-                    <h3>Developers</h3>
-                    <p>Keep API keys, database credentials, and service passwords secure locally. CLI support makes it script-friendly.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">&#127968;</div>
-                    <h3>Privacy Enthusiasts</h3>
-                    <p>Your data never leaves your machine. No telemetry, no cloud sync, no third-party servers.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">&#127961;</div>
-                    <h3>Air-Gapped Systems</h3>
-                    <p>Works completely offline. Perfect for secure environments with no internet access.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">&#128218;</div>
-                    <h3>Students & Educators</h3>
-                    <p>Free forever with open source code. Learn cryptography by reading the implementation.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -601,12 +522,12 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Open Source & Transparent</h2>
-                <p>Soteria is a personal project built with privacy in mind. Explore the code, understand how it works, and trust what you use.</p>
+                <h2>Take Control of Your Passwords</h2>
+                <p>Set up Soteria in under a minute. Free, open source, and built to stay that way.</p>
                 <div class="cta-buttons">
                     <a href="getting-started.html" class="btn btn-primary btn-large">Get Started</a>
-                    <a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline btn-large">
-                        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="https://github.com/nikokiru/soteria" target="_blank" class="cta-github-link">
+                        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
                         View on GitHub
@@ -669,7 +590,6 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
                     navLinks.classList.remove('active');
                     mobileMenuBtn.classList.remove('active');
                 }
@@ -711,7 +631,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .security-item, .tech-item, .shortcut-item, .step, .screenshot-card, .faq-item, .use-case-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .security-item, .step, .faq-item, .comparison-card, .showcase-tab').forEach(el => {
             observer.observe(el);
         });
 
@@ -719,17 +639,15 @@
         // Interactive Mockup Entries
         // ============================================
         document.querySelectorAll('.mockup-entry').forEach((entry, index) => {
-            // Add staggered animation on load
             entry.style.animationDelay = `${0.5 + index * 0.1}s`;
-
-            // Click to copy effect
             entry.addEventListener('click', () => {
                 entry.classList.add('copied');
                 const copyIcon = entry.querySelector('.entry-copy');
                 if (copyIcon) {
-                    copyIcon.textContent = '✓';
+                    const origHTML = copyIcon.innerHTML;
+                    copyIcon.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
                     setTimeout(() => {
-                        copyIcon.textContent = '📋';
+                        copyIcon.innerHTML = origHTML;
                         entry.classList.remove('copied');
                     }, 1500);
                 }
@@ -745,9 +663,9 @@
         // Typing Animation for Hero
         // ============================================
         const typingPhrases = [
-            'Your Machine.',
-            'Zero Cloud. Zero Risk.',
-            'Encrypted. Local. Yours.'
+            'Your Rules.',
+            'Your Device.',
+            'Your Privacy.'
         ];
         let phraseIndex = 0;
         let charIndex = 0;
@@ -784,6 +702,32 @@
 
         // Start typing animation
         setTimeout(typeText, 1000);
+
+        // ============================================
+        // Showcase Tabs
+        // ============================================
+        document.querySelectorAll('.showcase-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.showcase-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.showcase-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.add('active');
+            });
+        });
+
+        // Showcase image loading
+        document.querySelectorAll('.showcase-img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.display = 'block';
+                const placeholder = this.previousElementSibling;
+                if (placeholder && placeholder.classList.contains('showcase-placeholder')) {
+                    placeholder.style.display = 'none';
+                }
+            });
+            if (img.complete) {
+                img.dispatchEvent(new Event('load'));
+            }
+        });
 
         // ============================================
         // Password Generator
@@ -850,11 +794,11 @@
             const length = password.length;
             const entropy = length * Math.log2(charsetSize);
 
-            if (entropy < 28) return 1; // Weak
-            if (entropy < 36) return 2; // Fair
-            if (entropy < 60) return 3; // Good
-            if (entropy < 128) return 4; // Strong
-            return 5; // Very Strong
+            if (entropy < 28) return 1;
+            if (entropy < 36) return 2;
+            if (entropy < 60) return 3;
+            if (entropy < 128) return 4;
+            return 5;
         }
 
         function updateStrength(level) {
@@ -892,33 +836,14 @@
                 const faqItem = button.parentElement;
                 const isActive = faqItem.classList.contains('active');
 
-                // Close all other items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                 });
 
-                // Toggle current item
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
             });
-        });
-
-        // ============================================
-        // Screenshot Image Loading
-        // ============================================
-        document.querySelectorAll('.screenshot-img').forEach(img => {
-            img.addEventListener('load', function() {
-                this.style.display = 'block';
-                const placeholder = this.previousElementSibling;
-                if (placeholder && placeholder.classList.contains('screenshot-placeholder')) {
-                    placeholder.style.display = 'none';
-                }
-            });
-            // Trigger load event if already cached
-            if (img.complete) {
-                img.dispatchEvent(new Event('load'));
-            }
         });
     </script>
 </body>
