@@ -67,6 +67,26 @@
 
             <article class="update-card">
                 <div class="update-meta">
+                    <time datetime="2026-02-08" class="update-date">February 8, 2026</time>
+                    <span class="update-badge badge-improvement">Improvement</span>
+                    <span class="update-badge badge-security">Security</span>
+                </div>
+                <h2 class="update-title">Comprehensive Test Suite &mdash; 97% Code Coverage</h2>
+                <div class="update-content">
+                    <p>Built a professional test suite from the ground up, covering every module with 274+ automated tests and 97% line coverage:</p>
+                    <ul>
+                        <li><strong>274 tests across 8 modules</strong> &mdash; vault operations, CLI commands, IPC server endpoints, cryptography, storage, models, password strength, and logging</li>
+                        <li><strong>97% line coverage</strong> &mdash; all non-GUI code is thoroughly tested with branch-level verification using <code>pytest-cov</code></li>
+                        <li><strong>Rate limit isolation</strong> &mdash; test fixtures redirect rate-limit state to temporary directories so tests never bleed state or affect real vault data</li>
+                        <li><strong>IPC server integration tests</strong> &mdash; 55 tests exercise the browser extension API including CORS preflight, domain search, all entry endpoints, and error handling</li>
+                        <li><strong>CLI command coverage</strong> &mdash; 82 tests cover every subcommand including init, add, get, list, delete, search, update, change-master, and generate with all their edge cases</li>
+                        <li><strong>Slow test marker</strong> &mdash; Argon2id key derivation tests are marked <code>@pytest.mark.slow</code> so fast iteration skips them with <code>-m "not slow"</code></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
                     <time datetime="2026-02-07" class="update-date">February 7, 2026</time>
                     <span class="update-badge badge-fix">Bug Fix</span>
                     <span class="update-badge badge-improvement">Improvement</span>
