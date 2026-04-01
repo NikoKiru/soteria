@@ -81,6 +81,7 @@
                         <li><strong>Atomic rate-limit file writes</strong> &mdash; rate-limit state now uses temp-file-then-replace, consistent with vault file writes, preventing corruption on crash</li>
                         <li><strong>Legacy vault upgrade notification</strong> &mdash; when a vault encrypted with older Argon2id parameters is opened and auto-upgraded, users now see a toast notification (GUI) or log entry (CLI) confirming the upgrade</li>
                         <li><strong>Service index guard</strong> &mdash; <code>update_entry</code> now correctly rebuilds the service index if the service name changes, preventing stale lookups</li>
+                        <li><strong>Extension alphabetical sorting</strong> &mdash; the browser extension entry list is now sorted alphabetically by service name (then username), so newly added entries appear in the correct position instead of at the bottom</li>
                     </ul>
                 </div>
             </article>
