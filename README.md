@@ -193,6 +193,33 @@ gh-pages/
 
 Features | Get Started | Security | Updates | GitHub
 
+### GitHub Wiki Source
+
+If your GitHub remote currently tracks only the `gh-pages` folder, use `gh-pages/wiki/` as the source for GitHub Wiki pages.
+
+The folder contains ready-to-publish wiki pages:
+
+- `Home.md`
+- `Quick-Start.md`
+- `CLI-Reference.md`
+- `GUI-Guide.md`
+- `Browser-Extension.md`
+- `Security-Model.md`
+- `Troubleshooting.md`
+- `Development-Guide.md`
+- `_Sidebar.md`
+
+To publish to GitHub Wiki:
+
+```powershell
+git clone https://github.com/<owner>/<repo>.wiki.git
+Set-Location <repo>.wiki
+Copy-Item -Path ..\<repo>\gh-pages\wiki\* -Destination . -Recurse -Force
+git add .
+git commit -m "Add initial Soteria wiki"
+git push
+```
+
 ### Adding Updates
 
 1. Open `gh-pages/updates.html`
