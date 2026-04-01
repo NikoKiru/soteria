@@ -67,6 +67,26 @@
 
             <article class="update-card">
                 <div class="update-meta">
+                    <time datetime="2026-04-01" class="update-date">April 1, 2026</time>
+                    <span class="update-badge badge-fix">Bug Fix</span>
+                    <span class="update-badge badge-security">Security</span>
+                </div>
+                <h2 class="update-title">Input Validation Hardening &amp; Vault Integrity Fixes</h2>
+                <div class="update-content">
+                    <p>A code audit uncovered several validation gaps and robustness issues, now resolved:</p>
+                    <ul>
+                        <li><strong>Duplicate username prevention on update</strong> &mdash; <code>update_entry</code> now checks for duplicate service+username combinations before saving, matching the guard already present in <code>add_entry</code></li>
+                        <li><strong>CLI update length validation</strong> &mdash; the <code>update</code> command now validates field lengths (service, username, password, URL, notes) before writing, closing a gap where oversized data could be saved</li>
+                        <li><strong>GUI entry dialog length limits</strong> &mdash; the add/edit dialog now enforces maximum field lengths (100/255/1024/2048/10000 chars) with inline error messages</li>
+                        <li><strong>Atomic rate-limit file writes</strong> &mdash; rate-limit state now uses temp-file-then-replace, consistent with vault file writes, preventing corruption on crash</li>
+                        <li><strong>Legacy vault upgrade notification</strong> &mdash; when a vault encrypted with older Argon2id parameters is opened and auto-upgraded, users now see a toast notification (GUI) or log entry (CLI) confirming the upgrade</li>
+                        <li><strong>Service index guard</strong> &mdash; <code>update_entry</code> now correctly rebuilds the service index if the service name changes, preventing stale lookups</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
                     <time datetime="2026-02-08" class="update-date">February 8, 2026</time>
                     <span class="update-badge badge-improvement">Improvement</span>
                     <span class="update-badge badge-security">Security</span>
