@@ -82,6 +82,7 @@ The desktop app exposes a localhost HTTP API for browser extension communication
 | `/api/entries/search` | POST | Search entries by query/domain |
 | `/api/entries/get` | POST | Get entry with password by ID |
 | `/api/entries/add` | POST | Add new entry |
+| `/api/entries/delete` | POST | Delete entry by ID |
 
 ### Security Constraints
 
@@ -255,6 +256,12 @@ browser_extension/
 - `clipboardWrite`: Copy passwords
 - `tabs`: Get current domain
 - `host_permissions`: `http://127.0.0.1:8722/*` for IPC
+
+### UX Highlights
+
+- Recommends matching credentials when authentication fields are detected
+- Prompts to save newly captured login/signup credentials
+- Allows deleting saved passwords directly in the extension popup
 
 ---
 
