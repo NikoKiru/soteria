@@ -67,6 +67,28 @@
 
             <article class="update-card">
                 <div class="update-meta">
+                    <time datetime="2026-04-25" class="update-date">April 25, 2026</time>
+                    <span class="update-badge badge-security">Security</span>
+                </div>
+                <h2 class="update-title">Security Audit: Hardening Across IPC, Vault, and Storage</h2>
+                <div class="update-content">
+                    <p>A deep security audit identified and fixed several confirmed vulnerabilities. All changes are backward compatible &mdash; existing vaults continue to work unchanged.</p>
+                    <ul>
+                        <li><strong>Master password change now always verifies the current password</strong> &mdash; previously, an attacker with brief access to an unlocked vault could change the master password without knowing the current one, locking the legitimate user out. The vault now re-derives and constant-time compares against the active key on every change attempt.</li>
+                        <li><strong>IPC server: cross-origin POST attack closed</strong> &mdash; the localhost API now rejects every request whose <code>Origin</code> is not a known browser-extension scheme, before any handler runs. Previously the response was hidden via CORS but side effects (like locking the vault) still fired for cross-site POSTs.</li>
+                        <li><strong>IPC server: DNS-rebinding mitigation</strong> &mdash; the <code>Host</code> header is now validated against an allow-list (<code>127.0.0.1</code>, <code>localhost</code>, <code>::1</code>) so a malicious site cannot rebind a hostname to <code>127.0.0.1</code> and proxy requests to the API.</li>
+                        <li><strong>IPC server: request body size cap</strong> &mdash; <code>Content-Length</code> is capped at 64 KB to prevent memory-exhaustion DoS via forged headers.</li>
+                        <li><strong>Vault file permissions race fixed</strong> &mdash; on Unix, <code>vault.json</code> is now created via <code>os.open</code> with mode <code>0600</code> from the start. Previously there was a brief window between <code>rename</code> and <code>chmod</code> where the file could be world-readable.</li>
+                        <li><strong>Rate-limit state file hardened</strong> &mdash; <code>rate_limit.json</code> now also uses <code>0600</code> permissions so other local users cannot reset the failed-attempts counter to bypass lockout.</li>
+                        <li><strong>Defense-in-depth length validation</strong> &mdash; <code>vault.add_entry</code> and <code>vault.update_entry</code> now enforce field-length limits at the vault layer, even if a future caller forgets to validate.</li>
+                        <li><strong>Generic 500 on unexpected unlock errors</strong> &mdash; the IPC unlock handler no longer leaks stack traces from unexpected exceptions.</li>
+                    </ul>
+                    <p>18 new regression tests pin down each fix. All 293 existing tests continue to pass.</p>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-meta">
                     <time datetime="2026-04-03" class="update-date">April 3, 2026</time>
                     <span class="update-badge badge-feature">Feature</span>
                 </div>
