@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soteria vs cloud password managers - feature-by-feature comparison of local-first vs cloud-based password managers.">
+    <title>Compare - Soteria Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/soteria.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Soteria vs Cloud Password Managers">
+    <meta property="og:description" content="Feature-by-feature comparison of local-first vs cloud-based password managers.">
+    <meta property="og:image" content="assets/soteria.png">
+    <meta property="og:url" content="https://nikokiru.github.io/soteria/compare.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Soteria vs Cloud Password Managers">
+    <meta name="twitter:description" content="Feature-by-feature comparison of local-first vs cloud-based password managers.">
+    <meta name="twitter:image" content="assets/soteria.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/soteria.png" alt="Soteria Logo" class="logo-icon">
+                <span>Soteria</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="compare.html" class="nav-active">Compare</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="https://github.com/nikokiru/soteria" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Soteria vs Cloud Password Managers</h1>
+            <p>An honest, feature-by-feature comparison. We'll tell you where Soteria wins and where it doesn't.</p>
+        </div>
+    </header>
+
+    <!-- Comparison Content -->
+    <main class="content-section">
+        <div class="container">
+
+            <!-- TL;DR -->
+            <div class="whitepaper-section">
+                <h2>The short answer</h2>
+                <p>Cloud password managers (1Password, Bitwarden, Dashlane, LastPass) optimize for <strong>convenience and cross-device sync</strong>. Soteria optimizes for <strong>data sovereignty and zero-trust storage</strong>: your encrypted vault never leaves your machine.</p>
+                <p>If you want one-click sync across phone, laptop, and tablet without thinking about it, a cloud manager is probably right for you. If you want to know with certainty that no third party has access to your encrypted data &mdash; even if they're breached &mdash; Soteria is the right tool.</p>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Feature comparison table -->
+            <div class="whitepaper-section">
+                <h2>Feature-by-feature</h2>
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Soteria</th>
+                            <th>Cloud Managers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Encryption at rest</strong></td>
+                            <td>AES-256-GCM, Argon2id KDF (128 MB / 4 iters)</td>
+                            <td>AES-256-GCM or ChaCha20-Poly1305, PBKDF2 or Argon2id (parameters vary)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Where keys live</strong></td>
+                            <td>Derived in memory only, never written</td>
+                            <td>Derived in memory only, never written</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Where encrypted vault lives</strong></td>
+                            <td>Your machine only (<code>~/.soteria/vault.json</code>)</td>
+                            <td>Vendor servers (replicated globally)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cross-device sync</strong></td>
+                            <td>Manual (or via your own OneDrive / Dropbox / Syncthing)</td>
+                            <td>Automatic, real-time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile apps</strong></td>
+                            <td>Not yet</td>
+                            <td>iOS, Android (native)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Browser extension</strong></td>
+                            <td>Chrome / Edge / Brave</td>
+                            <td>All major browsers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Autofill</strong></td>
+                            <td>Yes (browser extension)</td>
+                            <td>Yes (extension + native OS integration)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Master password recovery</strong></td>
+                            <td>None &mdash; if you forget it, the vault is gone</td>
+                            <td>Some offer "emergency kit" / recovery codes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network attack surface</strong></td>
+                            <td>Localhost only (port 8722, IPC for the extension)</td>
+                            <td>Public internet (TLS to vendor servers)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk if vendor is breached</strong></td>
+                            <td>Zero &mdash; there's no vendor server holding your data</td>
+                            <td>Encrypted vault leaks; offline cracking attempts begin</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk if your device is lost or stolen</strong></td>
+                            <td>Encrypted vault is exposed; protected by master password + Argon2id</td>
+                            <td>Lower &mdash; revoke device access from another device</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Source code</strong></td>
+                            <td>Fully open source (this repo)</td>
+                            <td>Bitwarden / KeePassXC: open. 1Password / Dashlane: closed.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telemetry / analytics</strong></td>
+                            <td>None</td>
+                            <td>Varies; mostly opt-out</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subscription cost</strong></td>
+                            <td>Free, no account required</td>
+                            <td>$3&ndash;$10 / month (free tiers usually limited)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sharing passwords</strong></td>
+                            <td>Manual export (encrypted)</td>
+                            <td>Built-in sharing / family / team plans</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audit history</strong></td>
+                            <td>Per-entry timestamps; no central log</td>
+                            <td>Activity log across devices and shared items</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Honest tradeoffs -->
+            <div class="whitepaper-section">
+                <h2>Where Soteria is honestly worse</h2>
+                <ul>
+                    <li><strong>No mobile app.</strong> If you need to fill passwords on iOS or Android, Soteria can't help you yet. A cloud manager will.</li>
+                    <li><strong>No automatic sync.</strong> If you use Soteria on more than one machine, you have to point it at a synced folder yourself (OneDrive, Dropbox, Syncthing, an external drive). It works, but it's not turnkey.</li>
+                    <li><strong>No recovery if you forget the master password.</strong> Cloud managers can offer recovery via account verification or emergency kits. Soteria can't &mdash; there's no central account to verify against. Forget the password, lose the vault.</li>
+                    <li><strong>No password sharing.</strong> Family plans, team vaults, "share login with my partner" &mdash; cloud managers do this well. Soteria's only option is exporting an encrypted entry and sending it manually.</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Where Soteria wins -->
+            <div class="whitepaper-section">
+                <h2>Where Soteria is honestly better</h2>
+                <ul>
+                    <li><strong>Zero exposure to vendor breaches.</strong> When a cloud manager is breached (it has happened), every customer's encrypted vault leaks. Soteria has no central server, so there's nothing to leak.</li>
+                    <li><strong>Zero trust required.</strong> You don't have to believe a vendor's security claims, audit reports, or change-control processes. The code that touches your vault is the code on your machine, and you can read all of it.</li>
+                    <li><strong>No ongoing cost.</strong> No subscription, no "free tier with limits," no future enshittification when the vendor needs to grow revenue.</li>
+                    <li><strong>No network attack surface.</strong> The desktop app makes zero outbound connections. The only HTTP listener is bound to <code>127.0.0.1</code> with strict Origin and Host validation for the browser extension.</li>
+                    <li><strong>Account-free.</strong> No email, no signup, no recovery questions, no marketing.</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Who should use what -->
+            <div class="whitepaper-section">
+                <h2>Pick the right tool for you</h2>
+                <h3>Use a cloud password manager if&hellip;</h3>
+                <ul>
+                    <li>You need to fill passwords on a phone or tablet daily.</li>
+                    <li>You share passwords with family / housemates / coworkers.</li>
+                    <li>You'd rather pay a few dollars a month than think about backups.</li>
+                    <li>You're not comfortable losing access to your vault if you forget the master password.</li>
+                </ul>
+                <h3>Use Soteria if&hellip;</h3>
+                <ul>
+                    <li>You don't trust any third party with even your encrypted data.</li>
+                    <li>You want a tool that's still useful when the internet is down or the vendor is acquired / shut down.</li>
+                    <li>You're comfortable managing your own backup strategy.</li>
+                    <li>You want to read the source code of every line that touches your secrets.</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><strong>Both can coexist.</strong> Many users keep low-stakes credentials in a cloud manager for convenience and high-stakes credentials (banking, recovery codes, work) in Soteria.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="whitepaper-section" style="text-align: center; padding-top: 2rem;">
+                <a href="getting-started.html" class="btn btn-primary">Get Started with Soteria</a>
+                <a href="migrate.html" class="btn btn-outline" style="margin-left: 0.5rem;">Migrating from another manager?</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="back-to-top.js" defer></script>
+</body>
+</html>
